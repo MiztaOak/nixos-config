@@ -56,6 +56,7 @@
     enable = true;
     userName = "Johan Ek";
     userEmail = "johan.ek@tuta.com";
+    extraConfig.credentials.helper = "store";
   };
 
   #Configure neovim
