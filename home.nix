@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  
   home.username = "goaty";
   home.homeDirectory = "/home/goaty";
 
@@ -63,6 +64,7 @@
     viAlias = true;
     vimAlias = true;
     extraConfig = ''
+      colorscheme catppuccin
       set clipboard=unnamedplus
       set tabstop=2
       set shiftwidth=2
@@ -70,7 +72,9 @@
     '';
   };
   programs.neovim.plugins = [
-    pkgs.vimPlugins.nvim-treesitter
+    pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    pkgs.vimPlugins.telescope-nvim
+    pkgs.vimPlugins.catppuccin-nvim
   ];
 
   # starship - an customizable prompt for any shell
