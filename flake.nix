@@ -3,10 +3,10 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
@@ -38,7 +38,7 @@
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixpkgs-fmt);
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
@@ -59,21 +59,31 @@
           ./nixos/configuration.nix
 	  # Laptop specific config
 	  ./nixos/laptop/laptop.nix
+	  
+	  home-manager.nixosModules.home-manager
+	  {
+	    # home-manager.userGlobalPkgs = true;
+	    # home-manager.userUserPackages = true;
+	    home-manager.users.goaty = import ./home-manager/home.nix;
+	    home-manager.extraSpecialArgs = { inherit inputs outputs; };
+	  }
         ];
       };
     };
 
+
+
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "goaty@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.nix
-        ];
-      };
-    };
+    # homeConfigurations = {
+    #   "goaty@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
+    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+    #     extraSpecialArgs = {inherit inputs outputs;};
+    #     modules = [
+    #       # > Our main home-manager configuration file <
+    #       ./home-manager/home.nix
+    #     ];
+    #   };
+    # };
   };
 }
