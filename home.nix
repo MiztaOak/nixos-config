@@ -39,6 +39,7 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    git-credential-manager
 
     # misc
     tree
@@ -56,7 +57,9 @@
     enable = true;
     userName = "Johan Ek";
     userEmail = "johan.ek@tuta.com";
-    extraConfig.credentials.helper = "store";
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential."https://github.com".username = "MiztaOak";
+    extraConfig.credential.credentialStore = "cache";
   };
 
   #Configure neovim
