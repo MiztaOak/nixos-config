@@ -93,22 +93,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  #Install neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    configure = {
-      customRC = ''
-        set clipboard=unnamedplus
-      '';
-      packages.myVimPackages = with pkgs.vimPlugins; {
-        start = [ nvim-treesitter ];
-      };
-    };
-  };
-
   #Install steam
   programs.steam = {
     enable = true;
@@ -138,7 +122,10 @@
     wget
     wl-clipboard
     gcc
+    neovim
   ];
+
+  environment.variables.EDITOR = "nvim";
 
   #Add nerd font
   fonts.packages = with pkgs; [

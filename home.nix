@@ -57,6 +57,22 @@
     userEmail = "johan.ek@tuta.com";
   };
 
+  #Configure neovim
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    extraConfig = ''
+      set clipboard=unnamedplus
+      set tabstop=2
+      set shiftwidth=2
+      set expandtab
+    '';
+  };
+  programs.neovim.plugins = [
+    pkgs.vimPlugins.nvim-treesitter
+  ];
+
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
