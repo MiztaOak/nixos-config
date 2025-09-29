@@ -10,9 +10,6 @@
   pkgs,
   ...
 }: {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
 
   nixpkgs = {
     overlays = [
@@ -35,9 +32,6 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -102,17 +96,9 @@
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
     };
-    # Opinionated: disable channels
-    channel.enable = false;
-
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
