@@ -18,7 +18,7 @@
       outputs.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
-      neovim-nightly-overlay.overlays.default
+      #neovim-nightly-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -81,19 +81,13 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = ''
-      colorscheme catppuccin
-      set clipboard=unnamedplus
-      set tabstop=2
-      set shiftwidth=2
-      set expandtab
-    '';
+    extraConfig = lib.fileContents ./neovim/init.vim;
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      pkgs.vimPlugins.telescope-nvim
+      pkgs.vimPlugins.catppuccin-nvim
+    ];
   };
-  programs.neovim.plugins = [
-    pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-    pkgs.vimPlugins.telescope-nvim
-    pkgs.vimPlugins.catppuccin-nvim
-  ];
 
   # starship - an customizable prompt for any shell
   programs.starship = {
