@@ -7,6 +7,7 @@
   ... 
 }: {
   imports = [
+    ./hyprland.nix
   ];
 
   nixpkgs = {
@@ -37,49 +38,14 @@
   home.username = "goaty";
   home.homeDirectory = "/home/goaty";
 
-  ####################################
-  # Hyprland config and friend
-  ####################################
-  programs.kitty.enable = true;
-  programs.waybar.enable = true;
-  wayland.windowManager.hyprland.enable = true;
-
-  wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-    bind =
-      [
-        "$mod, F, exec, firefox"
-        ", Print, exec, grimblast copy area"
-        "$mod, exec, exec fuzzel"
-      ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (builtins.genList (i:
-            let ws = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-          )
-          9)
-      );
-  };
-
-  programs.fuzzel.enable = true;
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 16;
-  };
-
-
   home.packages = with pkgs; [
 
     fastfetch
+
+    #Terminal
+    kitty
+    starship
+    fish
 
     # archives
     zip
@@ -127,18 +93,6 @@
       pkgs.vimPlugins.telescope-nvim
       pkgs.vimPlugins.catppuccin-nvim
     ];
-  };
-
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
   };
 
   programs.home-manager.enable = true;
