@@ -75,6 +75,9 @@
 
     #Gaming + etc
     discord-ptb
+    lutris
+    wine
+    protonup-qt
   ];
 
   # basic configuration of git, please change to your own

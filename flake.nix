@@ -12,9 +12,6 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    #Hyprland
-    # hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -65,26 +62,11 @@
 	  
 	        home-manager.nixosModules.home-manager
 	        {
-	          # home-manager.userGlobalPkgs = true;
-	          # home-manager.userUserPackages = true;
 	          home-manager.users.goaty = import ./home-manager/home.nix;
 	          home-manager.extraSpecialArgs = { inherit inputs outputs; };
 	        }
         ];
       };
     };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    # homeConfigurations = {
-    #   "goaty@nixos-laptop" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-    #     extraSpecialArgs = {inherit inputs outputs;};
-    #     modules = [
-    #       # > Our main home-manager configuration file <
-    #       ./home-manager/home.nix
-    #     ];
-    #   };
-    # };
   };
 }
