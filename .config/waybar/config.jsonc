@@ -9,10 +9,10 @@
   "modules-left": [
     "cpu",
     "memory",
-    "hyprland/workspaces"
+    "disk"
   ],
   "modules-center": [
-    "clock"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "tray",
@@ -20,6 +20,7 @@
     "network",
     "wireplumber",
     "battery",
+    "clock"
   ],
   // Modules
   "hyprland/workspaces": {
@@ -149,5 +150,21 @@
   "tray": {
     "icon-size": 20,
     "spacing": 10
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "events": {
+		  "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		  "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		  "on-charging-100": "notify-send -u normal 'Battery Full!'"
+	  },
+    "format-icons": ["", "", "", "", ""]
+  },
+  "disk": {
+	  "interval": 30,
+    "path": "/home",
+    "unit": "GB",
+	  "format": " {specific_free:0.2f} GB free on {path}",
+    "on-click": "kitty btop"
   }
 }

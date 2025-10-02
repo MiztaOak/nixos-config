@@ -12,6 +12,7 @@
     waypaper
     swaylock
     cava
+    libnotify
 
     hyprpaper
     hyprlock
