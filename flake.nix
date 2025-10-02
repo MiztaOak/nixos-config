@@ -60,21 +60,19 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-	  # Laptop specific config
-	  ./nixos/laptop/laptop.nix
+	        # Laptop specific config
+	        ./nixos/laptop/laptop.nix
 	  
-	  home-manager.nixosModules.home-manager
-	  {
-	    # home-manager.userGlobalPkgs = true;
-	    # home-manager.userUserPackages = true;
-	    home-manager.users.goaty = import ./home-manager/home.nix;
-	    home-manager.extraSpecialArgs = { inherit inputs outputs; };
-	  }
+	        home-manager.nixosModules.home-manager
+	        {
+	          # home-manager.userGlobalPkgs = true;
+	          # home-manager.userUserPackages = true;
+	          home-manager.users.goaty = import ./home-manager/home.nix;
+	          home-manager.extraSpecialArgs = { inherit inputs outputs; };
+	        }
         ];
       };
     };
-
-
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'

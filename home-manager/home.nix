@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./hyprland.nix
+    ./librewolf.nix
   ];
 
   nixpkgs = {
@@ -67,6 +68,9 @@
     # system tools
     sysstat
     lm_sensors # for `sensors` command
+
+    #Media stuff
+    vlc
 
     #Gaming + etc
     discord-ptb
