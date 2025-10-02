@@ -10,20 +10,13 @@
     wlogout
     fuzzel
     waypaper
-    hyprpaper
     swaylock
     cava
+
+    hyprpaper
+    hyprlock
+    hyprpicker
   ];
-  ####################################
-  # Hyprland config and friend
-  ####################################
-  # programs.waybar.enable = true;
-  # programs.wlogout.enable = true;
-  # programs.yazi.enable = true;
-  #
-  # programs.wofi.enable = true;
-
-
   # wayland.windowManager.hyprland = {
   #   enable = true;
   #   #package = pkgs.hyprland;
