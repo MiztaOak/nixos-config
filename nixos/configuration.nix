@@ -64,7 +64,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Cosmic Desktop Environment.
+  # Enable the ly Desktop Environment.
   services.displayManager.ly.enable = true;
 
   #Enable Hyprland
@@ -114,6 +114,19 @@
       substituters = ["https://hyprland.cachix.org"];
       trusted-substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+
+      auto-optimise-store = true;
+    };
+
+    optimise = {
+      automatic = true;
+      dates = [ "0:00" ];
+    };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
     };
   };
 
