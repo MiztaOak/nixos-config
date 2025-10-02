@@ -71,6 +71,7 @@
 
     #Media stuff
     vlc
+    feishin
 
     #Gaming + etc
     discord-ptb

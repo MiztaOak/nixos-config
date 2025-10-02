@@ -17,6 +17,8 @@
     hyprlock
     hyprpicker
   ];
+
+  services.mako.enable = true;
   # wayland.windowManager.hyprland = {
   #   enable = true;
   #   #package = pkgs.hyprland;
