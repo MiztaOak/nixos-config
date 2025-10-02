@@ -18,6 +18,14 @@
     package = pkgs.librewolf;
     languagePacks = [ "en-US" "se" ];
     policies = {
+      Cookies = {
+        "Allow" = [
+          "https://duckduckgo.com"
+          "https://mail.tutanota.com"
+          "https://github.com"
+          "https://youtube.com"
+        ];
+      };
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       Homepage = "previous-session";
