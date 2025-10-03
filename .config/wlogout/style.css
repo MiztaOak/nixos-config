@@ -10,6 +10,8 @@ window {
 button {
   border-radius: 0;
   border-color: #cba6f7;
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 18px;
   text-decoration-color: #cdd6f4;
   color: #cdd6f4;
   background-color: #181825;

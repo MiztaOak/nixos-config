@@ -85,6 +85,9 @@
     variant = "";
   };
 
+  # Add support for svg icons
+  programs.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

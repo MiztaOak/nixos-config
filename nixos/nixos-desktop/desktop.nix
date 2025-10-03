@@ -14,4 +14,6 @@
 
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
+
+  network.hostName = "nixos-desktop"
 }

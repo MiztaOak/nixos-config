@@ -12,6 +12,7 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = {
@@ -58,7 +59,7 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
 	        # Laptop specific config
-	        ./nixos/laptop/laptop.nix
+	        ./nixos/nixos-laptop/laptop.nix
 	  
 	        home-manager.nixosModules.home-manager
 	        {
