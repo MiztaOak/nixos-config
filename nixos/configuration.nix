@@ -70,13 +70,19 @@
   #Enable Hyprland
   programs.hyprland = {
     enable = true;
+
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
     xwayland.enable = true;
   };
 
   # Enable screen sharing
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    # extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 
   # Configure keymap in X11
@@ -92,6 +98,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  hardware.enableAllFirmware = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

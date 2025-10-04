@@ -62,6 +62,7 @@
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     git-credential-manager
+    pavucontrol
 
     # misc
     tree
@@ -79,6 +80,7 @@
     lutris
     wine
     protonup-qt
+    wowup-cf
   ];
 
   # basic configuration of git, please change to your own

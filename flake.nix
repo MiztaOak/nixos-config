@@ -13,6 +13,12 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    #hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; 
+    };
   };
 
   outputs = {
@@ -68,6 +74,22 @@
 	        }
         ];
       };
+     nixos-desktop = nixpkgs.lib.nixosSystem {
+       specialArgs = {inherit inputs outputs;};
+       modules = [
+         # > Our main nixos config file <
+         ./nixos/configuration.nix
+         #Desktop specific config
+         ./nixos/nixos-desktop/desktop.nix
+         ./nixos/nixos-desktop/hardware-configuration.nix
+
+         home-manager.nixosModules.home-manager
+         {
+           home-manager.users.goaty = import ./home-manager/home.nix;
+           home-manager.extraSpecialArgs = { inherit inputs outputs; };
+         }
+       ];
+     };
     };
   };
 }
