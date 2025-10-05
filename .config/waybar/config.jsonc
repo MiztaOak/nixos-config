@@ -12,7 +12,7 @@
     "disk"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "wlr/taskbar"
   ],
   "modules-right": [
     "tray",
@@ -24,6 +24,13 @@
     "custom/wlogout"
   ],
   // Modules
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    // "tooltip": false,
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
   "custom/wlogout": {
     "format": "⏻ ",
     "rotate": 0,
@@ -172,7 +179,7 @@
   },
   "disk": {
 	  "interval": 30,
-    "path": "/home",
+    "path": "/",
     "unit": "GB",
 	  "format": " {specific_free:0.2f} GB free on {path}",
     "on-click": "kitty btop"
