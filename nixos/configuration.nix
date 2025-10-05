@@ -156,7 +156,7 @@
   home-manager.backupFileExtension = "hm-backup";
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   #Install steam
   programs.steam = {

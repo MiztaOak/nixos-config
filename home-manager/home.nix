@@ -9,7 +9,7 @@
   imports = [
     ./hyprland.nix
     ./firefox.nix
-    ./librewolf.nix
+    # ./librewolf.nix
   ];
 
   nixpkgs = {

@@ -20,9 +20,15 @@
     "network",
     "wireplumber",
     "battery",
-    "clock"
+    "clock",
+    "custom/wlogout"
   ],
   // Modules
+  "custom/wlogout": {
+    "format": "⏻ ",
+    "rotate": 0,
+    "on-click": "wlogout"
+  },
   "hyprland/workspaces": {
     "all-outputs": false,
     "disable-click": false,
@@ -63,6 +69,7 @@
       "󰤥",
       "󰤨"
     ],
+    "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "on-click": "kitty nmtui"
   },
@@ -81,7 +88,8 @@
       "󰕿",
       "󰖀",
       "󰕾"
-    ]
+    ],
+    "on-click": "pavucontrol"
   },
   "memory": {
     "interval": 5,
