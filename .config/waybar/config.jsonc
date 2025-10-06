@@ -12,7 +12,7 @@
     "disk"
   ],
   "modules-center": [
-    "wlr/taskbar"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "tray",
@@ -24,13 +24,6 @@
     "custom/wlogout"
   ],
   // Modules
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 20,
-    // "tooltip": false,
-    "on-click": "activate",
-    "on-click-middle": "close"
-  },
   "custom/wlogout": {
     "format": "⏻ ",
     "rotate": 0,
@@ -42,13 +35,16 @@
     "format": "{icon}",
     "format-icons": {
       "active": "󰝥",
+      "empty": "󰝦",
       "visible": "",
       "default": "󰝦"
     },
     "persistent-only": true,
+    "active-only": false,
     "persistent-workspaces": {
-      "DP-3": [ 1, 3, 5, 7, 9 ],
-      "HDMI-A-1": [ 2, 4, 6, 8, 10 ],
+        // "*": 5,
+        "DP-3": [ 1, 2, 3, 4, 5 ],
+        "HDMI-A-1": [ 6, 7, 8, 9, 10 ],
     }
   },
   "mpd": {
@@ -181,7 +177,7 @@
 	  "interval": 30,
     "path": "/",
     "unit": "GB",
-	  "format": " {specific_free:0.2f} GB free on {path}",
+	  "format": " {specific_free:0.2f} GB",
     "on-click": "kitty btop"
   }
 }
