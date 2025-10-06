@@ -74,6 +74,7 @@
     #Media stuff
     vlc
     feishin
+    nsxiv
 
     #Gaming + etc
     discord-ptb
@@ -110,6 +111,11 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
+  xresources.properties = {
+    "*background" =  "#1e1e2e";
+    "*foreground" = "#cdd6f4";
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
