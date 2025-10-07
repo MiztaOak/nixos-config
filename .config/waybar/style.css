@@ -73,7 +73,7 @@ window#waybar.hidden {
 /* Center Modules */
 
 .modules-center{
-  color: @mauve;
+  color: @lavender;
   padding-left:10px;
   padding-right:10px;
 }
