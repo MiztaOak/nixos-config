@@ -38,6 +38,7 @@ window#waybar.hidden {
   border:none;
   background-color: @surface0;
   border-bottom: 5px solid @surface0;
+  margin-right: 3px;
 }
 
 #workspaces button:hover {
@@ -51,8 +52,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.empty {
-  background-color: @crust;
-  border-bottom: 5px solid @crust;
+  background-color: @base;
+  border-bottom: 5px solid @base;
 }
 
 #workspaces button.hosting-monitor.active {
