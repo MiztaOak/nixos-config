@@ -7,12 +7,13 @@
   "spacing": 16,
   // Choose the order of the modules
   "modules-left": [
+    "hyprland/workspaces",
     "cpu",
     "memory",
     "disk"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "clock"
   ],
   "modules-right": [
     "tray",
@@ -20,7 +21,6 @@
     "network",
     "wireplumber",
     "battery",
-    "clock",
     "custom/wlogout"
   ],
   // Modules
@@ -31,18 +31,24 @@
   },
   "hyprland/workspaces": {
     "all-outputs": false,
-    "disable-click": false,
     "format": "{icon}",
     "format-icons": {
-      "active": "󰝥",
-      "empty": "󰝦",
-      "visible": "",
-      "default": "󰝦"
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "1",
+      "7": "2",
+      "8": "3",
+      "9": "4",
+      "10": "5",
     },
     "persistent-only": true,
     "active-only": false,
     "persistent-workspaces": {
         // "*": 5,
+        "eDP-1": [ 1, 2, 3, 4, 5 ],
         "DP-3": [ 1, 2, 3, 4, 5 ],
         "HDMI-A-1": [ 6, 7, 8, 9, 10 ],
     }
