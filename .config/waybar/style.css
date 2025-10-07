@@ -44,6 +44,7 @@ window#waybar.hidden {
 #workspaces button:hover {
   color:@pink; 
   background-color: @surface1;
+  border-bottom: 5px solid white;
 }
 
 #workspaces button.active {
@@ -54,6 +55,11 @@ window#waybar.hidden {
 #workspaces button.empty {
   background-color: @base;
   border-bottom: 5px solid @base;
+}
+
+#workspaces button.empty:hover {
+  color:@mauve;
+  border-bottom: 5px solid white;
 }
 
 #workspaces button.hosting-monitor.active {
