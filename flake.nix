@@ -19,6 +19,15 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland"; 
     };
+
+    #Nixvim
+    nixvim = {
+      # For unstable
+      # url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/nixos-25.05";
+
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

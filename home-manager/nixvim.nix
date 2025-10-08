@@ -1,0 +1,112 @@
+{ inputs, lib, config, pkgs, ... }:
+{
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+  ];
+  home.shellAliases.v = "nvim";
+
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+
+    viAlias = true;
+    vimAlias = true;
+
+    nixpkgs.useGlobalPackages = true;
+    dependencies.nodejs.enable = true;
+
+    clipboard.register = "unnamedplus";
+    clipboard.providers.wl-copy.enable = true;
+
+
+    extraConfigVim = lib.fileContents ./neovim/init.vim;
+
+    colorscheme = "catppuccin";
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "mocha";
+        transparent_background = true;
+	      # integrations = {
+	      # treesitter = true;
+	      # };
+      };
+    };
+
+    plugins = {
+      treesitter = {
+        enable = true;
+
+        nixvimInjections = true;
+
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+
+      };
+
+      telescope = {
+        enable = true;
+
+        highlightTheme = "catppuccin";
+
+        keymaps = {
+          # Find files using Telescope command-line sugar.
+          "<leader><leader>" = "find_files";
+          "<leader>/" = "live_grep";
+          "<leader>b" = "buffers";
+          "<leader>fh" = "help_tags";
+          "<leader>fd" = "diagnostics";
+        };
+
+        settings.defaults = {
+          file_ignore_patterns = [
+            "^.git/"
+            "^.mypy_cache/"
+            "^__pycache__/"
+            "^output/"
+            "^data/"
+            "%.ipynb"
+          ];
+          set_env.COLORTERM = "truecolor";
+        };
+      };
+
+      lazygit.enable = true;
+      web-devicons.enable = true;
+
+      gitsigns = {
+        enable = true;
+        settings.signs = {
+          add.text = "+";
+          change.text = "~";
+        };
+      };
+
+    };
+
+    keymaps = [
+      # Find TODOs
+      {
+        mode = "n";
+        key = "<C-t>";
+        action.__raw = ''
+          function()
+            require('telescope.builtin').live_grep({
+              default_text="TODO",
+              initial_mode="normal"
+            })
+          end
+        '';
+        options.silent = true;
+      }
+      #Lazygit
+      {
+        mode = "n";
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<cr>";
+      }
+    ];
+  };
+}

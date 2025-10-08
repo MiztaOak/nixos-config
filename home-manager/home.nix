@@ -9,6 +9,7 @@
   imports = [
     ./hyprland.nix
     ./firefox.nix
+    ./nixvim.nix
     # ./librewolf.nix
   ];
 
@@ -63,6 +64,7 @@
     fzf # A command-line fuzzy finder
     git-credential-manager
     pavucontrol
+    tree-sitter
 
     # misc
     tree
@@ -92,19 +94,6 @@
     extraConfig.credential.helper = "manager";
     extraConfig.credential."https://github.com".username = "MiztaOak";
     extraConfig.credential.credentialStore = "cache";
-  };
-
-  #Configure neovim
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    extraConfig = lib.fileContents ./neovim/init.vim;
-    plugins = [
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-      pkgs.vimPlugins.telescope-nvim
-      pkgs.vimPlugins.catppuccin-nvim
-    ];
   };
 
   programs.home-manager.enable = true;

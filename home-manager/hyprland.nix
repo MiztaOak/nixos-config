@@ -39,14 +39,6 @@
       inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
-      # "$mod" = "SUPER";
-      # bind = [
-      #   "$mainMod, 1, split-workspace, 1"
-      #   "$mainMod, 2, split-workspace, 2"
-      #   "$mainMod, 3, split-workspace, 3"
-      #   "$mainMod, 4, split-workspace, 4"
-      #   "$mainMod, 5, split-workspace, 5"
-      # ];
       plugin = {
         split-monitor-workspaces = {
           count = 5;
