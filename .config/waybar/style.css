@@ -1,11 +1,11 @@
-@import "mocha.css";
+@import "gruvbox.css";
 * {
   font-family: Jetbrains Mono Nerd Font, sans-serif;
 }
 
 window#waybar {
   font-size: 15px;
-  background-color: @crust;
+  background-color: @waybar;
   transition-property: all;
   transition-duration: .5s;
   padding-left: 10px;
@@ -20,7 +20,7 @@ window#waybar.hidden {
 /* Left modules */
 
 .modules-left{
-  color: @lavender;
+  color: @text-main;
 }
 
 #workspaces{
@@ -32,55 +32,51 @@ window#waybar.hidden {
 #workspaces button {
   font-size: 17px;
   padding: 10px 5px;
-  color: @lavender;
+  color: @workspaces;
   border-radius:0;
   outline:none;
   border:none;
-  background-color: @surface0;
-  border-bottom: 5px solid @surface0;
+  background-color: @workspaces-bg;
+  border-bottom: 5px solid @workspaces-bg;
   margin-right: 3px;
 }
 
 #workspaces button:hover {
-  color:@pink; 
-  background-color: @surface1;
-  border-bottom: 5px solid white;
+  box-shadow: none;
+  text-shadow: none;
+  color:@workspaces-hover; 
+  background: @workspaces-bg;
 }
 
 #workspaces button.active {
-  color: @mauve;
-  background-color: @surface1;
+  color: @workspaces-active;
+  background-color: @workspaces-full;
 }
 
 #workspaces button.empty {
-  background-color: @base;
-  border-bottom: 5px solid @base;
-}
-
-#workspaces button.empty:hover {
-  color:@mauve;
-  border-bottom: 5px solid white;
+  background-color: @workspaces-empty;
+  border-bottom: 5px solid @workspaces-empty;
 }
 
 #workspaces button.hosting-monitor.active {
-  border-bottom: 5px solid @lavender
+  border-bottom: 5px solid @workspaces-active
 }
 
 #workspaces button.urgent {
-  color: @maroon;
+  color: @alert;
 }
 
 /* Center Modules */
 
 .modules-center{
-  color: @lavender;
+  color: @text-main;
   padding-left:10px;
   padding-right:10px;
 }
 
 /* Right modules */
 .modules-right{
-  color: @lavender;
+  color: @text-main;
   padding-right:10px;
 }
 

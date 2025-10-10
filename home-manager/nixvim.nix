@@ -21,15 +21,12 @@
 
     extraConfigVim = lib.fileContents ./neovim/init.vim;
 
-    colorscheme = "catppuccin";
-    colorschemes.catppuccin = {
+    colorscheme = "gruvbox";
+    colorschemes.gruvbox = {
       enable = true;
       settings = {
-        flavour = "mocha";
-        transparent_background = true;
-	      # integrations = {
-	      # treesitter = true;
-	      # };
+        contrast = "medium";
+        transparentBg = true;
       };
     };
 

@@ -8,9 +8,9 @@
       DisableFirefoxStudies = true;
       Homepage = "previous-session";
       ExtensionSettings = {
-        # Catpuccin Mocha - Lavender
-        "{8446b178-c865-4f5c-8ccc-1d7887811ae3}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-mocha-lavender-git/latest.xpi";
+        # Gruvbox theme
+        "{21ab01a8-2464-4824-bccb-6db15659347e}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/gruvbox-material-soft-theme/latest.xpi";
           installation_mode = "force_installed";
         };
         # Bitdefender

@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./firefox.nix
     ./nixvim.nix
+    ./kitty.nix
     # ./librewolf.nix
   ];
 
@@ -68,6 +69,8 @@
 
     # misc
     tree
+    cowsay
+    fortune
 
     # system tools
     sysstat
@@ -102,8 +105,8 @@
   systemd.user.startServices = "sd-switch";
 
   xresources.properties = {
-    "*background" =  "#1e1e2e";
-    "*foreground" = "#cdd6f4";
+    "*background" =  "#282828";
+    "*foreground" = "#ebdbb2";
   };
 
   # This value determines the home Manager release that your
