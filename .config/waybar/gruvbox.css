@@ -79,7 +79,7 @@
 @define-color ok                @aqua2;
 @define-color workspaces        @yellow1;
 @define-color workspaces-hover  @yellow2;
-@define-color workspaces-active @green2;
+@define-color workspaces-active @yellow2;
 @define-color workspaces-full   @bg3;
 @define-color workspaces-bg     @bg3;
 @define-color workspaces-empty  @bg1;

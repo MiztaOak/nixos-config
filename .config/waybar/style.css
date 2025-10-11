@@ -1,10 +1,11 @@
 @import "gruvbox.css";
 * {
   font-family: Jetbrains Mono Nerd Font, sans-serif;
+  min-height: 0;
 }
 
 window#waybar {
-  font-size: 15px;
+  font-size: 14px;
   background-color: @waybar;
   transition-property: all;
   transition-duration: .5s;
@@ -30,8 +31,8 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  font-size: 17px;
-  padding: 10px 5px;
+  font-size: 14px;
+  padding: 5px 5px;
   color: @workspaces;
   border-radius:0;
   outline:none;
@@ -51,6 +52,10 @@ window#waybar.hidden {
 #workspaces button.active {
   color: @workspaces-active;
   background-color: @workspaces-full;
+}
+
+#workspaces button.visible {
+  color: @workspaces-active;
 }
 
 #workspaces button.empty {
