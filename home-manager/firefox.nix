@@ -43,6 +43,11 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi";
           installation_mode = "force_installed";
         };
+        #600% Sound volume
+        "{c4b582ec-4343-438c-bda2-2f691c16c262}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/600-sound-volume/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
       HardwareAcceleration = true;
       Preferences = {

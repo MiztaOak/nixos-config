@@ -98,11 +98,55 @@
         '';
         options.silent = true;
       }
-      #Lazygit
+      # Lazygit
       {
         mode = "n";
         key = "<leader>gg";
         action = "<cmd>LazyGit<cr>";
+      }
+      # Window splits
+      {
+        mode = "n";
+        key = "<leader>|";
+        action = "<cmd>vsplit<cr>";
+      }
+      # Window movement
+      {
+        mode = [
+          "n"
+          "t"
+        ];
+        key = "<leader>-";
+        action = "<cmd>split<cr>";
+      }
+      {
+        mode = [
+          "n"
+          "t"
+        ];
+        key = "<C-h>";
+        action = "<C-w>h";
+      }
+      {
+        mode = [
+          "n"
+          "t"
+        ];
+        key = "<C-l>";
+        action = "<C-w>l";
+      }
+      {
+        mode = [
+          "n"
+          "t"
+        ];
+        key = "<C-j>";
+        action = "<C-w>j";
+      }
+      {
+        mode = "n";
+        key = "<C-k>";
+        action = "<C-w>k";
       }
     ];
   };
