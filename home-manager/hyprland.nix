@@ -8,7 +8,6 @@
     waybar
     yazi
     wlogout
-    fuzzel
     waypaper
     swaylock
     cava

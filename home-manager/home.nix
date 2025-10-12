@@ -11,6 +11,7 @@
     ./firefox.nix
     ./nixvim.nix
     ./kitty.nix
+    ./rofi.nix
     # ./librewolf.nix
   ];
 
