@@ -8,12 +8,11 @@
     waybar
     yazi
     wlogout
-    waypaper
     swaylock
     cava
     libnotify
 
-    hyprpaper
+    # hyprpaper
     hyprlock
     hyprpicker
   ];

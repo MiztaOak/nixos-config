@@ -28,6 +28,9 @@
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    #swww
+    swww.url = "github:LGFae/swww";
   };
 
   outputs = {

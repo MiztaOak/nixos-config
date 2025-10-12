@@ -186,6 +186,7 @@
     wl-clipboard
     gcc
     neovim
+    inputs.swww.packages.${pkgs.system}.swww
   ];
 
   environment.variables.EDITOR = "nvim";

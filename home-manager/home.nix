@@ -67,6 +67,7 @@
     git-credential-manager
     pavucontrol
     tree-sitter
+    bc
 
     # misc
     tree
@@ -104,6 +105,9 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
+  # Start the swww daemon
+  services.swww.enable = true;
 
   xresources.properties = {
     "*background" =  "#282828";
