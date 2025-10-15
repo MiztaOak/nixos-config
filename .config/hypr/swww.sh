@@ -43,7 +43,7 @@ for imagen in "$wall_dir"/*.{jpg,jpeg,png,webp}; do
 	if [ -f "$imagen" ]; then
 		nombre_archivo=$(basename "$imagen")
 			if [ ! -f "${cacheDir}/${nombre_archivo}" ] ; then
-				convert -strip "$imagen" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
+				magick "$imagen" -strip -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
 			fi
     fi
 done
