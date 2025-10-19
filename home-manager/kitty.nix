@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     fish
@@ -15,7 +15,7 @@
     settings = {
       shell = "fish";
       enable_audio_bell = false;
-      hide_window_decorations = true; 
+      hide_window_decorations = true;
       enabled_layouts = "splits:split_axis=horizontal";
       background_opacity = 0.95;
     };
