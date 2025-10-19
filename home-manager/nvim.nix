@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
 
   #Configure neovim
@@ -53,5 +53,5 @@
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
   };
-  
+
 }
