@@ -10,7 +10,6 @@
     ./kitty.nix
     ./rofi.nix
     ./zed.nix
-    ./gnome.nix
   ];
 
   nixpkgs = {
@@ -44,6 +43,9 @@
   home.packages = with pkgs; [
 
     fastfetch
+
+    #Productivity
+    obsidian
 
     #Terminal
     kitty

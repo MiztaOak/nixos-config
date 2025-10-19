@@ -74,10 +74,15 @@
           ./nixos/configuration.nix
 	        # Laptop specific config
 	        ./nixos/nixos-laptop/laptop.nix
-	  
+
 	        home-manager.nixosModules.home-manager
 	        {
-	          home-manager.users.goaty = import ./home-manager/home.nix;
+						home-manager.users.goaty = {...}: {
+						  imports = [
+						    ./home-manager/home.nix
+								./home-manager/gnome.nix
+							];
+						};
 	          home-manager.extraSpecialArgs = { inherit inputs outputs; };
 	        }
         ];
