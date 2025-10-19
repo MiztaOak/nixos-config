@@ -82,6 +82,7 @@
     vlc
     feishin
     nsxiv
+    krita
 
     #Gaming
     vesktop
