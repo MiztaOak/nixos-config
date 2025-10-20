@@ -8,7 +8,9 @@
       gnomeExtensions.vitals
       gnomeExtensions.vim-alt-tab
       gnomeExtensions.appindicator
-      gnomeExtensions.hide-top-bar
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.useless-gaps
+      gnomeExtensions.search-light
   ];
 
   # Gnome settings and tweaks
@@ -33,7 +35,9 @@
         vitals.extensionUuid
         vim-alt-tab.extensionUuid
         appindicator.extensionUuid
-        hide-top-bar.extensionUuid
+        dash-to-dock.extensionUuid
+        useless-gaps.extensionUuid
+        search-light.extensionUuid
       ];
     };
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
