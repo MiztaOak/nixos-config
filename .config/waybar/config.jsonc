@@ -7,6 +7,7 @@
   "spacing": 16,
   // Choose the order of the modules
   "modules-left": [
+    "niri/workspaces",
     "hyprland/workspaces",
     "cpu",
     "memory",
@@ -17,6 +18,7 @@
   ],
   "modules-right": [
     "tray",
+    "niri/language",
     "hyprland/language",
     "network",
     "wireplumber",
@@ -51,6 +53,24 @@
         "eDP-1": [ 1, 2, 3, 4, 5 ],
         "DP-3": [ 1, 2, 3, 4, 5 ],
         "HDMI-A-1": [ 6, 7, 8, 9, 10 ],
+    }
+  },
+  "niri/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰝥",
+      "default": "󰝦"
+      // "1": "1",
+      // "2": "2",
+      // "3": "3",
+      // "4": "4",
+      // "5": "5",
+    },
+    "persistent-only": true,
+    "active-only": false,
+    "persistent-workspaces": {
+        "*": 5,
     }
   },
   "mpd": {

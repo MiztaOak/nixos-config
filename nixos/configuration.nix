@@ -79,10 +79,16 @@
     xwayland.enable = true;
   };
 
+  #Enable niri
+  programs.niri.enable = true;
+
   # Enable screen sharing
   xdg.portal = {
     enable = true;
-    # extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome 
+    ];
   };
 
   # Configure keymap in X11
@@ -188,6 +194,7 @@
     neovim
     inputs.swww.packages.${pkgs.system}.swww
     gruvbox-gtk-theme
+    xwayland-satellite
   ];
 
   environment.variables.EDITOR = "nvim";

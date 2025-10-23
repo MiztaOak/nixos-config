@@ -10,6 +10,7 @@
     ./kitty.nix
     ./rofi.nix
     ./zed.nix
+    ./niri.nix
   ];
 
   nixpkgs = {
