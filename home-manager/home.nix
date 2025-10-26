@@ -45,6 +45,9 @@
 
     fastfetch
 
+    #Cloud
+    nextcloud-client
+
     #Productivity
     obsidian
 
@@ -84,6 +87,7 @@
     feishin
     nsxiv
     krita
+    rmpc
 
     #Gaming
     vesktop
@@ -115,6 +119,12 @@
     "*background" =  "#282828";
     "*foreground" = "#ebdbb2";
   };
+
+  # #cmus config
+  # programs.cmus = {
+  #   enable = true;
+  #   theme = "gruvbox-alt";
+  # };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
