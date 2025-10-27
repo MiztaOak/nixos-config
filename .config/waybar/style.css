@@ -79,6 +79,10 @@ window#waybar.hidden {
   padding-right:10px;
 }
 
+#cava {
+  color: @cava;
+}
+
 /* Right modules */
 .modules-right{
   color: @text-main;
