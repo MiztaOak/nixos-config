@@ -91,11 +91,13 @@
 
     #Gaming
     vesktop
-    lutris
+    #TODO: remove unstable when lutris is no longer using depricated deps
+    unstable.lutris
     wine
     protonup-qt
     wowup-cf
   ];
+
 
   # basic configuration of git, please change to your own
   programs.git = {

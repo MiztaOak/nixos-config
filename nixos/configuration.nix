@@ -169,11 +169,12 @@
       dates = [ "0:00" ];
     };
 
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
+    #Currently replaced by nh
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 30d";
+    # };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -194,6 +195,14 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+  };
+
+  #Install and configure nh the nix helper
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 10";
+    flake = "/home/goaty/nixos-config";
   };
 
   # List packages installed in system profile. To search, run:
