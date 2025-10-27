@@ -32,6 +32,7 @@
     "waybar"
     "wlogout"
     "niri"
+    "fish"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
