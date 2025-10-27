@@ -67,18 +67,6 @@
   # Enable the ly Desktop Environment.
   services.displayManager.ly.enable = true;
 
-  #Enable Hyprland
-  programs.hyprland = {
-    enable = true;
-
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-
-    xwayland.enable = true;
-  };
-
   #Enable niri
   programs.niri.enable = true;
 
@@ -155,11 +143,6 @@
       experimental-features = "nix-command flakes";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
-
-      # Enable Cachix for hyprland https://wiki.hypr.land/Nix/Cachix/
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
 
       auto-optimise-store = true;
     };

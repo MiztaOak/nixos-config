@@ -1,16 +1,24 @@
 {
+  config,
   outputs,
   pkgs,
   ...
-}: {
+}: let
+  lib = pkgs.lib;
+  symlinkRoot = "/home/goaty/nixos-config/dotfiles";
+
+  dotfiles = import ./dotfiles.nix {
+    inherit config lib symlinkRoot;
+  };
+in {
   imports = [
-    ./hyprland.nix
     ./firefox.nix
     ./nixvim.nix
     ./kitty.nix
     ./rofi.nix
     ./zed.nix
     ./niri.nix
+    dotfiles
   ];
 
   nixpkgs = {
