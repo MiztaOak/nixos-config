@@ -14,7 +14,8 @@ input {
 
             // For example:
             layout "us,se"
-            options "grp:win_space_toggle,caps:escape"
+            options "grp:win_space_toggle"
+            // options "grp:win_space_toggle,caps:escape"
         }
 
         // Enable numlock on startup, omitting this setting disables it.

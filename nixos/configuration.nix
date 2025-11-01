@@ -85,6 +85,21 @@
     variant = "";
   };
 
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "enter";
+            delete = "backspace";
+          };
+        };
+      };
+    };
+  };
+
   # Add support for svg icons
   programs.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
 
