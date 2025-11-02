@@ -80,6 +80,7 @@ in {
     pavucontrol
     tree-sitter
     bc
+    nautilus
 
     # misc
     tree

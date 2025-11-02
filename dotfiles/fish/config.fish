@@ -3,7 +3,8 @@ if status is-interactive
 end
 
 function fish_greeting
-  fortune | cowsay
+  # fortune | cowsay
+  fastfetch
 end
 
 starship init fish | source

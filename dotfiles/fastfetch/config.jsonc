@@ -3,10 +3,12 @@
   "logo": {
     "type": "auto",
     "source": "~/.config/fastfetch/copeland.txt",
-    "height": 10,
     "padding": {
-      "top": 0
-    }
+      "top": 0,
+      "left": 6,
+      "bottom": 0
+    },
+    "position": "top"
   },
   "display": {
     "separator": "->   ",
@@ -23,12 +25,9 @@
     }
   },
   "modules": [
-    "break",
-    "break",
-    "break",
     {
       "type": "custom",
-      "format": "┌{$1} {#1}System Information{#} {$1}┐"
+      "format": " ┌{$1} {#1}System Information{#} {$1}┐"
     },
     "break",
     {
@@ -91,7 +90,7 @@
     "break",
     {
       "type": "custom",
-      "format": "└{$1}────────────────────{$1}┘"
+      "format": " └{$1}────────────────────{$1}┘"
     }
   ]
 }

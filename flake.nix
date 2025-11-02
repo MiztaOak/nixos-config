@@ -77,7 +77,6 @@
 						home-manager.users.goaty = {...}: {
 						  imports = [
 						    ./home-manager/home.nix
-								# ./home-manager/gnome.nix
 							];
 						};
 	          home-manager.extraSpecialArgs = { inherit inputs outputs; };
