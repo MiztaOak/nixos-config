@@ -67,28 +67,37 @@
   # Enable the ly Desktop Environment.
   services.displayManager.ly.enable = true;
 
-  #Enable Hyprland
-  programs.hyprland = {
-    enable = true;
-
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-
-    xwayland.enable = true;
-  };
+  #Enable niri
+  programs.niri.enable = true;
 
   # Enable screen sharing
   xdg.portal = {
     enable = true;
-    # extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
   };
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "enter";
+            delete = "backspace";
+          };
+        };
+      };
+    };
   };
 
   # Add support for svg icons
@@ -114,6 +123,33 @@
     #media-session.enable = true;
   };
 
+  # MPD
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/goaty/Music";
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "My PipeWire Output"
+      }
+      audio_output {
+        type "fifo"
+        name "my_fifo"
+        path "/tmp/mpd.fifo"
+        format "44100:16:2"
+      }
+    '';
+    user = "goaty";
+    # Optional:
+    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  };
+  systemd.services.mpd.environment = {
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
+
+
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
@@ -123,11 +159,6 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
 
-      # Enable Cachix for hyprland https://wiki.hypr.land/Nix/Cachix/
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-
       auto-optimise-store = true;
     };
 
@@ -136,11 +167,12 @@
       dates = [ "0:00" ];
     };
 
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
+    #Currently replaced by nh
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 30d";
+    # };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -155,15 +187,20 @@
 
   home-manager.backupFileExtension = "hm-backup";
 
-  # Install firefox.
-  # programs.firefox.enable = true;
-
   #Install steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+  };
+
+  #Install and configure nh the nix helper
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 10";
+    flake = "/home/goaty/nixos-config";
   };
 
   # List packages installed in system profile. To search, run:
@@ -181,13 +218,14 @@
     zip
     unzipNLS
     fd
-    btop
+    btop-rocm
     wget
     wl-clipboard
     gcc
     neovim
     inputs.swww.packages.${pkgs.system}.swww
     gruvbox-gtk-theme
+    xwayland-satellite
   ];
 
   environment.variables.EDITOR = "nvim";

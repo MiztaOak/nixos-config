@@ -32,7 +32,7 @@ fi
 
 
 physical_monitor_size=24
-monitor_res=$(hyprctl monitors |grep -A2 Monitor |head -n 2 |awk '{print $1}' | grep -oE '^[0-9]+')
+monitor_res=1920
 dotsperinch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs printf "%.0f")
 monitor_res=$(( $monitor_res * $physical_monitor_size / $dotsperinch ))
 

@@ -1,15 +1,24 @@
 {
+  config,
   outputs,
   pkgs,
   ...
-}: {
+}: let
+  lib = pkgs.lib;
+  symlinkRoot = "/home/goaty/nixos-config/dotfiles";
+
+  dotfiles = import ./dotfiles.nix {
+    inherit config lib symlinkRoot;
+  };
+in {
   imports = [
-    ./hyprland.nix
     ./firefox.nix
     ./nixvim.nix
     ./kitty.nix
     ./rofi.nix
     ./zed.nix
+    ./niri.nix
+    dotfiles
   ];
 
   nixpkgs = {
@@ -44,6 +53,9 @@
 
     fastfetch
 
+    #Cloud
+    nextcloud-client
+
     #Productivity
     obsidian
 
@@ -68,6 +80,7 @@
     pavucontrol
     tree-sitter
     bc
+    nautilus
 
     # misc
     tree
@@ -83,14 +96,19 @@
     feishin
     nsxiv
     krita
+    rmpc
+    openutau
+    reaper
 
     #Gaming
     vesktop
-    lutris
+    #TODO: remove unstable when lutris is no longer using depricated deps
+    unstable.lutris
     wine
     protonup-qt
     wowup-cf
   ];
+
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -114,6 +132,12 @@
     "*background" =  "#282828";
     "*foreground" = "#ebdbb2";
   };
+
+  # #cmus config
+  # programs.cmus = {
+  #   enable = true;
+  #   theme = "gruvbox-alt";
+  # };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

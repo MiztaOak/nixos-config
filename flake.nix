@@ -13,9 +13,6 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    #hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-
     #Nixvim
     nixvim = {
       # For unstable
@@ -80,7 +77,6 @@
 						home-manager.users.goaty = {...}: {
 						  imports = [
 						    ./home-manager/home.nix
-								./home-manager/gnome.nix
 							];
 						};
 	          home-manager.extraSpecialArgs = { inherit inputs outputs; };

@@ -7,21 +7,25 @@
   "spacing": 16,
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
+    "niri/workspaces",
+    // "hyprland/workspaces",
     "cpu",
     "memory",
     "disk"
   ],
   "modules-center": [
-    "clock"
+    "mpd"
+    // "cava"
   ],
   "modules-right": [
     "tray",
-    "hyprland/language",
+    "niri/language",
+    // "hyprland/language",
     "network",
     "wireplumber",
     "battery",
-    "custom/wlogout"
+    "clock",
+    "custom/wlogout",
   ],
   // Modules
   "custom/wlogout": {
@@ -53,16 +57,34 @@
         "HDMI-A-1": [ 6, 7, 8, 9, 10 ],
     }
   },
+  "niri/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰝥",
+      "default": "󰝦"
+      // "1": "1",
+      // "2": "2",
+      // "3": "3",
+      // "4": "4",
+      // "5": "5",
+    },
+    "persistent-only": true,
+    "active-only": false,
+    "persistent-workspaces": {
+        "*": 5,
+    }
+  },
   "mpd": {
     "port": 6600,
     "format": "{stateIcon}   {artist} - {title}",
     "format-stopped": "󰎈 No music is being played... 󰎈",
     "tooltip-format": "{elapsedTime} / {totalTime}",
-    "on-click": "mpc -p 6200 toggle",
-    "on-scroll-up": "mpc -p 6200 next",
-    "on-scroll-down": "mpc -p 6200 prev",
-    "on-click-right": "mpc -p 6200 next",
-    "on-click-middle": "kitty ncmpcpp -p 6200",
+    "on-click": "rmpc -p 6600 togglepause",
+    "on-scroll-up": "rmpc -p 6600 next",
+    "on-scroll-down": "rmpc -p 6600 prev",
+    "on-click-right": "rmpc -p 6600 next",
+    "on-click-middle": "kitty rmpc",
     "state-icons": {
       "playing": "󰏤",
       "paused": "󰐊"
@@ -136,21 +158,22 @@
     }
   },
   "cava": {
-    // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-    "framerate": 30,
+    "cava_config": "/home/goaty/.config/cava/config",
+    "framerate": 60,
     "autosens": 1,
-    "bars": 8,
+    "bars": 12,
     "lower_cutoff_freq": 50,
     "higher_cutoff_freq": 10000,
-    "hide_on_silence": true,
-    "sleep_timer": 3,
-    "method": "pipewire",
+    "hide_on_silence": false,
+    "method": "pulse",
     "source": "auto",
+    "sample_rate": 44100,
+    "sample_bits": 16,
     "stereo": true,
     "reverse": false,
     "bar_delimiter": 0,
-    "monstercat": true,
-    "waves": true,
+    "monstercat": false,
+    "waves": false,
     "noise_reduction": 0.77,
     "input_delay": 2,
     "format-icons": [

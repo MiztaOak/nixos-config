@@ -1,0 +1,99 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/copeland.txt",
+    "color": {
+      "1": "#83a598"
+    },
+    "padding": {
+      "top": 0,
+      "left": 3,
+      "bottom": 0
+    },
+    "position": "top"
+  },
+  "display": {
+    "separator": "->   ",
+    "color": {
+      "separator": "1" // Bold
+    },
+    "constants": [
+      "─────────────────"
+      // "───────────────────────────"
+    ],
+    "key": {
+      "type": "both",
+      "paddingLeft": 4
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": " ┌{$1} {#1}System Information{#} {$1}┐"
+    },
+    "break",
+    {
+      "key": "OS        ",
+      "keyColor": "#689d6a",
+      "type": "os"
+    },
+    {
+      "key": "Kernel    ",
+      "keyColor": "#98971a",
+      "type": "kernel"
+    },
+    {
+      "key": "Uptime    ",
+      "keyColor": "#d79921",
+      "type": "uptime"
+    },
+    {
+      "key": "Packages  ",
+      "keyColor": "#d65d0e",
+      "type": "packages"
+    },
+    {
+      "key": "WM        ",
+      "keyColor": "#af3a03",
+      "type": "wm"
+    },
+    {
+      "key": "DE         ",
+      "keyColor": "#af3a03",
+      "type": "de"
+    },
+    {
+      "key": "Shell     ",
+      "keyColor": "#af3a03",
+      "type": "shell"
+    },
+    {
+      "key": "Terminal  ",
+      "keyColor": "#d65d0e",
+      "type": "terminal"
+    },
+    {
+      "key": "CPU       ",
+      "keyColor": "#d79921",
+      "type": "cpu"
+    },
+    {
+      "key": "GPU       ",
+      "keyColor": "#98971a",
+      "type": "gpu",
+      "hideType": "integrated",
+      "format": "{vendor} {name}"
+    },
+    {
+      "key": "Memory    ",
+      "keyColor": "#689d6a",
+      "type": "memory"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": " └{$1}────────────────────{$1}┘"
+    }
+  ]
+}
