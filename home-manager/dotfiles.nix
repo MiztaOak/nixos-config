@@ -33,6 +33,7 @@
     "wlogout"
     "niri"
     "fish"
+    "cava"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);

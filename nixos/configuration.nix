@@ -218,7 +218,7 @@
     zip
     unzipNLS
     fd
-    btop
+    btop-rocm
     wget
     wl-clipboard
     gcc

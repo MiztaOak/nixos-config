@@ -97,6 +97,8 @@ in {
     nsxiv
     krita
     rmpc
+    openutau
+    reaper
 
     #Gaming
     vesktop

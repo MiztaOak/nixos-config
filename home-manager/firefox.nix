@@ -52,7 +52,6 @@
       HardwareAcceleration = true;
       Preferences = {
         "privacy.clearOnShutdown.history" = false;
-        "ml.chat.enabled" = false;
         "browser.urlbar.suggest.bookmark" = true;
         "browser.urlbar.suggest.engines" = false;
         "browser.urlbar.suggest.openpage" = false;
@@ -62,6 +61,18 @@
         "browser.startup.couldRestoreSession.count" = 1;
         "browser.startup.homepage" = "about:home";
         "sidebar.verticalTabs" = true;
+        #Kill all ai features
+        "browser.ml.enable" = false; 
+        "browser.ml.chat.enabled" = false; 
+        "browser.ml.chat.sidebar" = false;
+        "browser.ml.chat.menu" = false; 
+        "browser.ml.chat.page" = false; 
+        "extensions.ml.enabled" = false; 
+        "browser.ml.linkPreview.enabled" = false;
+        "browser.tabs.groups.smart.enabled" = false; 
+        "browser.tabs.groups.smart.userEnabled" = false;
+        "pdfjs.enableAltTextModelDownload" = false; 
+        "pdfjs.enableGuessAltText" = false; 
       };
     };
   };

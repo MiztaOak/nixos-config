@@ -14,8 +14,8 @@
     "disk"
   ],
   "modules-center": [
-    "mpd",
-    "cava"
+    "mpd"
+    // "cava"
   ],
   "modules-right": [
     "tray",
