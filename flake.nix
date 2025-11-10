@@ -24,12 +24,17 @@
 
     #swww
     swww.url = "github:LGFae/swww";
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    ghostty,
     ...
   } @ inputs: let
     inherit (self) outputs;

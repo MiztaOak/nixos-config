@@ -93,6 +93,7 @@ in {
 
     #Media stuff
     vlc
+    mpv
     feishin
     nsxiv
     krita
