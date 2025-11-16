@@ -1,0 +1,216 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  //"width": 1280,
+  "spacing": 16,
+  // Choose the order of the modules
+  "modules-left": [
+    "niri/workspaces",
+    // "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "disk"
+  ],
+  "modules-center": [
+    "mpd"
+    // "cava"
+  ],
+  "modules-right": [
+    "tray",
+    "niri/language",
+    // "hyprland/language",
+    "network",
+    "wireplumber",
+    "battery",
+    "clock",
+    "custom/wlogout",
+  ],
+  // Modules
+  "custom/wlogout": {
+    "format": "⏻ ",
+    "rotate": 0,
+    "on-click": "wlogout"
+  },
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "1",
+      "7": "2",
+      "8": "3",
+      "9": "4",
+      "10": "5",
+    },
+    "persistent-only": true,
+    "active-only": false,
+    "persistent-workspaces": {
+        // "*": 5,
+        "eDP-1": [ 1, 2, 3, 4, 5 ],
+        "DP-3": [ 1, 2, 3, 4, 5 ],
+        "HDMI-A-1": [ 6, 7, 8, 9, 10 ],
+    }
+  },
+  "niri/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰝥",
+      "default": "󰝦"
+      // "1": "1",
+      // "2": "2",
+      // "3": "3",
+      // "4": "4",
+      // "5": "5",
+    },
+    "persistent-only": true,
+    "active-only": false,
+    "persistent-workspaces": {
+        "*": 5,
+    }
+  },
+  "mpd": {
+    "port": 6600,
+    "format": "{stateIcon}   {artist} - {title}",
+    "format-stopped": "󰎈 No music is being played... 󰎈",
+    "tooltip-format": "{elapsedTime} / {totalTime}",
+    "on-click": "rmpc -p 6600 togglepause",
+    "on-scroll-up": "rmpc -p 6600 next",
+    "on-scroll-down": "rmpc -p 6600 prev",
+    "on-click-right": "rmpc -p 6600 next",
+    "on-click-middle": "kitty rmpc",
+    "state-icons": {
+      "playing": "󰏤",
+      "paused": "󰐊"
+    }
+  },
+  "network": {
+    "format": "{icon}",
+    "tooltip-format": "{ifname}",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "kitty nmtui"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃜",
+      "󰃛",
+      "󰃚"
+    ]
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁",
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰕾"
+    ],
+    "on-click": "pavucontrol"
+  },
+  "memory": {
+    "interval": 5,
+    "max-length": 9,
+    "min-length": 9,
+    "format": "󰍛 {used:0.1f} Gb",
+    "on-click": "kitty btop"
+  },
+  "cpu": {
+    "interval": 5,
+    "max-length": 8,
+    "min-length": 8,
+    "format": "󰻠 {}%",
+    "on-click": "kitty btop"
+  },
+  "clock": {
+    // "format": "󱑏  {:%I:%M %p}",
+    "format": "󰙹 {:%B %d %R}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffffff'><b>{}</b></span>",
+        "days": "<span color='#a6adc8'><b>{}</b></span>",
+        "weeks": "<span color='#bac2de'><b>W{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+    }
+  },
+  "cava": {
+    "cava_config": "/home/goaty/.config/cava/config",
+    "framerate": 60,
+    "autosens": 1,
+    "bars": 12,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "hide_on_silence": false,
+    "method": "pulse",
+    "source": "auto",
+    "sample_rate": 44100,
+    "sample_bits": 16,
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+  "hyprland/language": {
+    "format": "{short}"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "events": {
+		  "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		  "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		  "on-charging-100": "notify-send -u normal 'Battery Full!'"
+	  },
+    "format-icons": ["", "", "", "", ""]
+  },
+  "disk": {
+	  "interval": 30,
+    "path": "/",
+    "unit": "GB",
+	  "format": " {specific_free:0.2f} GB",
+    "on-click": "kitty btop"
+  }
+}

@@ -28,6 +28,11 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -35,6 +40,7 @@
     nixpkgs,
     home-manager,
     ghostty,
+    mango,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -88,22 +94,30 @@
 	        }
         ];
       };
-     nixos-desktop = nixpkgs.lib.nixosSystem {
-       specialArgs = {inherit inputs outputs;};
-       modules = [
-         # > Our main nixos config file <
-         ./nixos/configuration.nix
-         #Desktop specific config
-         ./nixos/nixos-desktop/desktop.nix
-         ./nixos/nixos-desktop/hardware-configuration.nix
+      nixos-desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos config file <
+          ./nixos/configuration.nix
+          #Desktop specific config
+          ./nixos/nixos-desktop/desktop.nix
+          ./nixos/nixos-desktop/hardware-configuration.nix
 
-         home-manager.nixosModules.home-manager
-         {
-           home-manager.users.goaty = import ./home-manager/home.nix;
-           home-manager.extraSpecialArgs = { inherit inputs outputs; };
-         }
-       ];
-     };
+          mango.nixosModules.mango
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.goaty = {...}: {
+              imports = [
+                ./home-manager/home.nix
+                ./home-manager/mango.nix 
+              ];
+            };
+            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+          }
+        ];
+      };
     };
   };
 }

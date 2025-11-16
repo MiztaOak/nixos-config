@@ -70,6 +70,8 @@
   #Enable niri
   programs.niri.enable = true;
 
+  programs.mango.enable = true;
+
   # Enable screen sharing
   xdg.portal = {
     enable = true;

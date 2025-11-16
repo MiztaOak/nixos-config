@@ -35,6 +35,7 @@
     "fish"
     "cava"
     "ghostty"
+    "mango"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
