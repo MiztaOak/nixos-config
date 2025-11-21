@@ -46,7 +46,7 @@
       telescope = {
         enable = true;
 
-        highlightTheme = "catppuccin";
+        highlightTheme = "gruvbox";
 
         keymaps = {
           # Find files using Telescope command-line sugar.

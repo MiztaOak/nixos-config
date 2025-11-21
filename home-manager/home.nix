@@ -18,6 +18,7 @@ in {
     ./rofi.nix
     ./zed.nix
     ./niri.nix
+    ./qutebrowser.nix
     dotfiles
   ];
 
@@ -81,6 +82,7 @@ in {
     tree-sitter
     bc
     nautilus
+    bitwarden-desktop
 
     # misc
     tree
@@ -103,6 +105,7 @@ in {
 
     #Gaming
     vesktop
+    bolt-launcher
     #TODO: remove unstable when lutris is no longer using depricated deps
     unstable.lutris
     wine
