@@ -1,7 +1,9 @@
 #!/bin/bash
-swww-daemon > /dev/null 2>&1 &
+set +e 
 
-mako > /dev/null 2>&1 &
+swww-daemon &
 
-waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &
+mako &
+
+waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null &
 
