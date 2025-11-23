@@ -25,6 +25,13 @@
         default_size = "12pt";
       };
     };
+    searchEngines = {
+      w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
+      aw = "https://wiki.archlinux.org/?search={}";
+      nw = "https://wiki.nixos.org/index.php?search={}";
+      np = "https://search.nixos.org/packages?query={}";
+      sf = "https://scryfall.com/search?q={}";
+    };
     extraConfig = lib.fileContents ./gruvbox.py;
   };
 }

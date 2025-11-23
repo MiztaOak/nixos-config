@@ -88,6 +88,7 @@ in {
     tree
     cowsay
     fortune
+    imagemagick
 
     # system tools
     sysstat
