@@ -2,18 +2,19 @@
   border: none;
   font-family: Jetbrains Mono Nerd Font Mono;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 14px;
   min-height: 0;
 }
 
 window#waybar {
   background: none;
+  /* background: rgba(40, 40, 40, 0.86); */
   margin: 0px;
   padding: 0px;
 }
 
 tooltip {
-  background: rgba(40, 40, 40, 0.76);
+  background: rgba(40, 40, 40, 0.86);
   border-radius: 4px;
   border-width: 2px;
   border-style: solid;
@@ -32,6 +33,7 @@ tooltip {
 #battery,
 #pulseaudio,
 #cpu,
+#memory,
 #temperature,
 #backlight,
 #network,
@@ -50,8 +52,9 @@ tooltip {
 
 
 #tags {
-  border-radius: 4px;
+  border-radius: 4px 0px 0px 4px;
   border-width: 2px;
+  border-right: 0px;
   border-style: solid;
   border-color: #c9b890;
   margin-left: 4px;
@@ -122,11 +125,11 @@ tooltip {
 
 #tray {
   background: rgba(40, 40, 40, 0.76);
-  border-radius: 4px;
+  border-radius: 4px 0px 0px 4px;
   border-width: 2px;
+  border-right: 0px;
   border-style: solid;
   border-color: #c9b890;
-  margin-right: 4px;
   margin-left: 4px;
   padding-right: 8px;
   padding-left: 9px;
@@ -136,11 +139,12 @@ tooltip {
 
 #network {
   background: rgba(40, 40, 40, 0.76);
-  border-radius: 4px;
+  border-radius: 0px;
   border-width: 2px;
+  border-right: 0px;
   border-style: solid;
   border-color: #c9b890;
-  margin-right: 4px;
+  /* margin-right: 4px; */
   margin-left: 0px;
   padding-right: 8px;
   padding-left: 9px;
@@ -180,11 +184,11 @@ tooltip {
 #custom-updates {
   background: rgba(40, 40, 40, 0.76);
   color: #ddca9e;
-  border-radius: 0px 4px 4px 0px;
-  border-width: 2px;
-  border-left: 0px;
-  border-style: solid;
-  border-color: #c9b890;
+  /* border-radius: 0px 4px 4px 0px; */
+  /* border-width: 2px; */
+  /* border-left: 0px; */
+  /* border-style: solid; */
+  /* border-color: #c9b890; */
 }
 
 #window {
@@ -192,20 +196,22 @@ tooltip {
   border-width: 2px;
   border-style: solid;
   border-color: #c9b890;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-left: 0px;
   margin-right: 10px;
   color: #ddca9e;
+  border-radius: 0px 4px 4px 0px;
 }
 
 #taskbar {
   background: rgba(40, 40, 40, 0.76);
   border-width: 2px;
+  border-right: 0px;
   border-style: solid;
   border-color: #c9b890;
-  border-radius: 4px;
-  margin-left: 10px;
-  margin-right: 10px;
+  border-radius: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   color: #ddca9e;
 }
 
@@ -287,7 +293,7 @@ tooltip {
   border-style: solid;
   border-color: #c9b890;
   border-right: 2px;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 #pulseaudio {
@@ -299,10 +305,21 @@ tooltip {
   border-color: #c9b890;
   border-right: 0px;
   margin-left: 0px;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 #cpu  {
+  background: rgba(40, 40, 40, 0.76);
+  color: #ddca9e;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c9b890;
+  border-right: 0px;
+  border-left: 0px;
+  border-radius: 0px;
+}
+
+#memory  {
   background: rgba(40, 40, 40, 0.76);
   color: #ddca9e;
   border-width: 2px;
