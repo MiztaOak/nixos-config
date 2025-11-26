@@ -12,6 +12,9 @@
         //"wlr/taskbar",
         "dwl/window"
     ],
+    "modules-center": [
+        "mpd"
+    ],
     "modules-right": [
         "tray",
         "network",
@@ -186,6 +189,21 @@
         "format-icons": {
             "Paused": " ",
             "Playing": " "
+        }
+    },
+    "mpd": {
+        "port": 6600,
+        "format": "{stateIcon}   {artist} - {title}",
+        "format-stopped": "󰎈 No music is being played... 󰎈",
+        "tooltip-format": "{elapsedTime} / {totalTime}",
+        "on-click": "rmpc -p 6600 togglepause",
+        "on-scroll-up": "rmpc -p 6600 next",
+        "on-scroll-down": "rmpc -p 6600 prev",
+        "on-click-right": "rmpc -p 6600 next",
+        "on-click-middle": "kitty rmpc",
+        "state-icons": {
+            "playing": "󰏤",
+            "paused": "󰐊"
         }
     },
     "cava": {

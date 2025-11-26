@@ -39,6 +39,7 @@ tooltip {
 #network,
 #workspaces,
 #tray,
+#mpd,
 #cava,
 #keyboard-state,
 #custom-notification,
@@ -273,6 +274,17 @@ tooltip {
   border-color: #c9b890;
   border-right: 0px;
   border-left: 0px;
+  color: #ddca9e;
+}
+
+#mpd {
+  background: rgba(40, 40, 40, 0.76);
+  border-radius: 4px 4px 4px 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c9b890;
+  margin-right: 10px;
+  margin-left: 10px;
   color: #ddca9e;
 }
 

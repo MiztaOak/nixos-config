@@ -37,7 +37,7 @@
     ),
     browser_column_widths: [20, 38, 42],
     text_color: "#ebdbb2",
-    background_color: "#282828",
+    //background_color: "#282828",
     header_background_color: "#3c3836",
     modal_background_color: None,
     modal_backdrop: false,
