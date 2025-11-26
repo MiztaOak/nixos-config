@@ -362,7 +362,7 @@ binds {
     Mod+M hotkey-overlay-title="Run an Application: rmpc" { spawn "ghostty" "-e" "rmpc"; }
     Mod+Shift+M hotkey-overlay-title="Run an Application: cava" { spawn "ghostty" "-e" "cava"; }
     MOD+TAB hotkey-overlay-title="List all open programs" { spawn "rofi" "-show" "window" "-mode" "window"; }
-    Mod+Shift+W hotkey-overlay-title="Run an Application: wallpaper picker" { spawn "sh" "/home/goaty/nixos-config/home-manager/swww.sh"; }
+    Mod+Shift+W hotkey-overlay-title="Run an Application: wallpaper picker" { spawn "sh" "/home/goaty/nixos-config/scripts/swww.sh"; }
     Mod+Shift+Ctrl+W hotkey-overlay-title="Restart waybar" { spawn "bash" "-c" "pkill waybar || waybar"; }
     Ctrl+Alt+BackSpace hotkey-overlay-title="Run an Application: wlogout" { spawn "bash" "-c" "pkill wlogout || wlogout"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
