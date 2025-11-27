@@ -229,6 +229,9 @@
     gruvbox-gtk-theme
     xwayland-satellite
     inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+    # dwl stuff
+    foot
   ];
 
   environment.variables.EDITOR = "nvim";

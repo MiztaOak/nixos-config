@@ -19,6 +19,7 @@ in {
     ./zed.nix
     ./niri.nix
     ./qutebrowser.nix
+    ./foot.nix
     dotfiles
   ];
 
