@@ -14,7 +14,6 @@ in {
   imports = [
     ./firefox.nix
     ./nixvim.nix
-    ./kitty.nix
     ./rofi.nix
     ./zed.nix
     ./niri.nix
@@ -138,6 +137,21 @@ in {
     "*background" =  "#282828";
     "*foreground" = "#ebdbb2";
   };
+
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-vaapi #AMD hardware acceleration
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
+
+  
 
   # #cmus config
   # programs.cmus = {

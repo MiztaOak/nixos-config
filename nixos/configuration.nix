@@ -205,11 +205,14 @@
     flake = "/home/goaty/nixos-config";
   };
 
+
+  programs.obs-studio.enable = true;
+  programs.obs-studio.enableVirtualCamera = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     fastfetch
-    kitty
     fzf
     git
     lazygit
@@ -228,9 +231,6 @@
     inputs.swww.packages.${pkgs.system}.swww
     gruvbox-gtk-theme
     xwayland-satellite
-    inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-    # dwl stuff
     foot
   ];
 

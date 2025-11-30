@@ -25,10 +25,6 @@
     #swww
     swww.url = "github:LGFae/swww";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +35,6 @@
     self,
     nixpkgs,
     home-manager,
-    ghostty,
     mango,
     ...
   } @ inputs: let

@@ -279,12 +279,13 @@ tooltip {
 
 #mpd {
   background: rgba(40, 40, 40, 0.76);
-  border-radius: 4px 4px 4px 4px;
+  border-radius: 0px 4px 4px 0px;
   border-width: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: #c9b890;
   margin-right: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   color: #ddca9e;
 }
 

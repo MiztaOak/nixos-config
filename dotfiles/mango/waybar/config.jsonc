@@ -12,9 +12,9 @@
         //"wlr/taskbar",
         "dwl/window"
     ],
-    "modules-center": [
-        "mpd"
-    ],
+    // "modules-center": [
+    //     "mpd"
+    // ],
     "modules-right": [
         "tray",
         "network",

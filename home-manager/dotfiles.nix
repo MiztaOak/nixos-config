@@ -34,7 +34,6 @@
     "niri"
     "fish"
     "cava"
-    "ghostty"
     "mango"
   ];
 
