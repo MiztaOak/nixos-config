@@ -118,11 +118,17 @@ in {
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Johan Ek";
-    userEmail = "johan.ek@tuta.com";
-    extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "MiztaOak";
-    extraConfig.credential.credentialStore = "cache";
+    settings = {
+      user = {
+        name = "Johan Ek";
+        email = "johan.ek@tuta.com";
+      };
+      credentials = {
+        helper = "manager";
+        "https://github.com".username = "MiztaOak";
+        credentialStore = "cache";
+      };
+    };
   };
 
   programs.home-manager.enable = true;
