@@ -1,5 +1,5 @@
 # This file defines overlays
-{inputs, ...}: {
+{inputs, system, ...}: {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
@@ -16,7 +16,7 @@
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
+      system = system;
       config.allowUnfree = true;
     };
   };
