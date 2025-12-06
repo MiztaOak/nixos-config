@@ -64,7 +64,6 @@ in {
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    git-credential-manager
     git-credential-oauth
     pavucontrol
     tree-sitter
@@ -109,12 +108,15 @@ in {
         name = "Johan Ek";
         email = "johan.ek@tuta.com";
       };
-      credentials = {
+      credential = {
         helper = "oauth";
-        credentialStore = "cache --timeout 21600";
       };
     };
   };
+
+  # programs.git-credential-oauth = {
+  #   enable = true;
+  # };
 
   programs.home-manager.enable = true;
 
