@@ -15,8 +15,6 @@ in {
     ./firefox.nix
     ./nixvim.nix
     ./rofi.nix
-    ./zed.nix
-    ./niri.nix
     ./qutebrowser.nix
     ./foot.nix
     dotfiles
@@ -28,17 +26,7 @@ in {
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      #neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
+      outputs.overlays.stable-packages
     ];
     # Configure your nixpkgs instance
     config = {
@@ -61,7 +49,6 @@ in {
     obsidian
 
     #Terminal
-    kitty
     starship
     fish
 
@@ -78,6 +65,7 @@ in {
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     git-credential-manager
+    git-credential-oauth
     pavucontrol
     tree-sitter
     bc
@@ -97,7 +85,6 @@ in {
     #Media stuff
     vlc
     mpv
-    feishin
     nsxiv
     krita
     rmpc
@@ -107,8 +94,7 @@ in {
     #Gaming
     vesktop
     bolt-launcher
-    #TODO: remove unstable when lutris is no longer using depricated deps
-    unstable.lutris
+    lutris
     wine
     protonup-qt
     wowup-cf
@@ -124,9 +110,8 @@ in {
         email = "johan.ek@tuta.com";
       };
       credentials = {
-        helper = "manager";
-        "https://github.com".username = "MiztaOak";
-        credentialStore = "cache";
+        helper = "oauth";
+        credentialStore = "cache --timeout 21600";
       };
     };
   };
@@ -156,14 +141,6 @@ in {
       obs-vkcapture
     ];
   };
-
-  
-
-  # #cmus config
-  # programs.cmus = {
-  #   enable = true;
-  #   theme = "gruvbox-alt";
-  # };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

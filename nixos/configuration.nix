@@ -15,7 +15,7 @@
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      outputs.overlays.stable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -68,7 +68,7 @@
   services.displayManager.ly.enable = true;
 
   #Enable niri
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
 
   programs.mango.enable = true;
 
@@ -230,7 +230,7 @@
     neovim
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
-    xwayland-satellite
+    # xwayland-satellite
     foot
   ];
 

@@ -1,14 +1,14 @@
 { pkgs, lib, ... } : {
-  nixpkgs.overlays = [
-    (final: prev: {
-      qutebrowser-overlay = prev.qutebrowser.override {
-        enableVulkan = true;
-      };
-    })
-  ];
+  # nixpkgs.unstable.overlays = [
+  #   (final: prev: {
+  #     qutebrowser-overlay = prev.qutebrowser.override {
+  #       enableVulkan = true;
+  #     };
+  #   })
+  # ];
   programs.qutebrowser = {
     enable = true;
-    package = pkgs.qutebrowser-overlay;
+    package = pkgs.qutebrowser;
     loadAutoconfig = true;
     keyBindings = {
       normal = {
@@ -17,6 +17,7 @@
       };
     };
     settings = {
+      changelog_after_upgrade = "never";
       colors = {
         webpage.preferred_color_scheme = "dark";
       };

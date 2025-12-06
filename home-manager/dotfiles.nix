@@ -22,6 +22,7 @@
   confFiles = map linkFile [
     "rofi/gruvbox-material.rasi"
     "rofi/wallSelect.rasi"
+    "starship.toml"
   ];
 
   confDirs = map linkDir [
@@ -31,7 +32,6 @@
     "rmpc"
     "waybar"
     "wlogout"
-    "niri"
     "fish"
     "cava"
     "mango"
