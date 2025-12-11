@@ -84,7 +84,7 @@ in {
     #Media stuff
     vlc
     mpv
-    nsxiv
+    swayimg
     krita
     rmpc
     openutau

@@ -1,5 +1,5 @@
 { pkgs, lib, ... } : {
-  # nixpkgs.unstable.overlays = [
+  # nixpkgs.overlays = [
   #   (final: prev: {
   #     qutebrowser-overlay = prev.qutebrowser.override {
   #       enableVulkan = true;

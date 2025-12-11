@@ -72,6 +72,12 @@
 
   programs.mango.enable = true;
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [ i3status swaysome ];
+  };
+
   # Enable screen sharing
   xdg.portal = {
     enable = true;
@@ -150,7 +156,6 @@
     # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
     XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
   };
-
 
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
@@ -233,6 +238,8 @@
     # xwayland-satellite
     foot
   ];
+
+  programs.dconf.enable = true;
 
   environment.variables.EDITOR = "nvim";
 

@@ -35,6 +35,9 @@
     "fish"
     "cava"
     "mango"
+    "sway"
+    "i3status"
+    "swayimg"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
