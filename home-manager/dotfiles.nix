@@ -30,14 +30,13 @@
     "mako"
     "hypr"
     "rmpc"
-    "waybar"
     "wlogout"
     "fish"
     "cava"
-    "mango"
     "sway"
     "i3status"
     "swayimg"
+    "waybar"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);

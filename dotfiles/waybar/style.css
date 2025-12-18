@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  font-size: 14px;
+  font-size: 12px;
   background-color: @waybar;
   transition-property: all;
   transition-duration: .5s;
@@ -32,13 +32,13 @@ window#waybar.hidden {
 
 #workspaces button {
   font-size: 14px;
-  padding: 5px 5px;
-  color: @workspaces;
+  padding: 5px 0px;
+  color: @fg0;
   border-radius:0;
   outline:none;
   border:none;
   background-color: @workspaces-bg;
-  border-bottom: 5px solid @workspaces-bg;
+  /* border-bottom: 5px solid @workspaces-bg; */
   margin-right: 3px;
 }
 
@@ -49,22 +49,27 @@ window#waybar.hidden {
   background: @workspaces-bg;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   color: @workspaces-active;
   background-color: @workspaces-full;
+  /* border-bottom: 5px solid @workspaces-active */
 }
 
 #workspaces button.visible {
   color: @workspaces-active;
+  background-color: @workspaces-full;
 }
 
 #workspaces button.empty {
   background-color: @workspaces-empty;
-  border-bottom: 5px solid @workspaces-empty;
+  color: @fg;
+  /* border-bottom: 5px solid @workspaces-empty; */
 }
 
-#workspaces button.hosting-monitor.active {
-  border-bottom: 5px solid @workspaces-active
+#workspaces button.empty.focused {
+  background-color: @workspaces-full;
+  color: @workspaces-active;
+  /* border-bottom: 5px solid @workspaces-active */
 }
 
 #workspaces button.urgent {
@@ -90,5 +95,9 @@ window#waybar.hidden {
 }
 
 #network{
-  padding:10px;
+  padding-right: 5px;
+}
+
+#wireplumber.muted {
+  color: @mute;
 }

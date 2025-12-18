@@ -17,6 +17,7 @@ in {
     ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
+    ./theming.nix
     dotfiles
   ];
 
@@ -97,6 +98,7 @@ in {
     wine
     protonup-qt
     wowup-cf
+    melonDS
   ];
 
 

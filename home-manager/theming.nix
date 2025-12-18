@@ -1,14 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # xwayland-satellite
-
-    waybar
     yazi
     cava
     wlogout
     wl-clipboard
     mako
+    waybar
 
     grim
     slurp

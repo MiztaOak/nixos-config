@@ -24,18 +24,12 @@
 
     #swww
     swww.url = "github:LGFae/swww";
-
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    mango,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -89,14 +83,11 @@
           ./nixos/nixos-desktop/desktop.nix
           ./nixos/nixos-desktop/hardware-configuration.nix
 
-          mango.nixosModules.mango
-
           home-manager.nixosModules.home-manager
           {
             home-manager.users.goaty = {...}: {
               imports = [
                 ./home-manager/home.nix
-                ./home-manager/mango.nix 
               ];
             };
             home-manager.extraSpecialArgs = { inherit inputs outputs; };

@@ -67,11 +67,6 @@
   # Enable the ly Desktop Environment.
   services.displayManager.ly.enable = true;
 
-  #Enable niri
-  # programs.niri.enable = true;
-
-  programs.mango.enable = true;
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

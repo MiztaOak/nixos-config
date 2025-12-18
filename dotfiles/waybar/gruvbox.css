@@ -25,7 +25,7 @@
 @define-color bg4       #7c6f64;
 @define-color bg-gray   @gray1;
 @define-color bg0_s     #32302f;
-@define-color fg4       #a89984;
+@define-color fg4       #c9b890;
 @define-color fg3       #bdae93;
 @define-color fg2       #d5c4a1;
 @define-color fg1       @fg;
@@ -79,8 +79,8 @@
 @define-color ok                @aqua2;
 @define-color workspaces        @yellow1;
 @define-color workspaces-hover  @yellow2;
-@define-color workspaces-active @yellow2;
-@define-color workspaces-full   @bg3;
+@define-color workspaces-active @bg;
+@define-color workspaces-full   @fg3;
 @define-color workspaces-bg     @bg3;
 @define-color workspaces-empty  @bg1;
 @define-color day               @orange1;
@@ -91,3 +91,4 @@
 @define-color audio             @bg3;
 @define-color battery           @bg2;
 @define-color cava              @green1;
+@define-color mute              @red2;

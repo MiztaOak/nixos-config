@@ -27,6 +27,8 @@ output HDMI-A-1 mode 1920x1080@75Hz position 0 0
 exec swww-daemon
 
 exec mako
+
+exec waybar
 #
 # Example configuration:
 #
@@ -98,6 +100,8 @@ exec mako
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym Ctrl+Alt+Backspace exec wlogout
 #
 # Moving around:
 #
@@ -226,38 +230,39 @@ bindsym $mod+r mode "resize"
     bindsym $mod+Shift+s exec sh ~/nixos-config/scripts/snap.sh
 
 #
-# Style Chnages
+# Style Changes
 #
     font pango:JetBrainsMono Nerd Font Mono,Font Awesome 10
-    client.focused #504945 #3c3836 #ebdbb2 #d79921 #ebdbb2
+    #client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+    client.focused #504945 #3c3836 #ebdbb2 #83a598 #bdae93
     client.unfocused #504945 #504945 #ebdbb2
 
     #default_border normal 3
     default_border pixel 3
 
     # gaps outer 5
-    # gaps inner 10
+    # gaps inner 5
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    status_command i3status
-
-    font pango: JetBrainsMono Nerd Font Mono,Font Awesome 12
-
-    colors {
-        statusline #ebdbb2
-        background #282828
-        focused_workspace #ebdbb2 #ebdbb2 #282828
-        inactive_workspace #504945 #504945 #ebdbb2
-    }
-}
+# bar {
+#     position top
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#     status_command i3status
+#
+#     font pango: JetBrainsMono Nerd Font Mono,Font Awesome 12
+#
+#     colors {
+#         statusline #ebdbb2
+#         background #282828
+#         focused_workspace #ebdbb2 #ebdbb2 #282828
+#         inactive_workspace #504945 #504945 #ebdbb2
+#     }
+# }
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*.conf
