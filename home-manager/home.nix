@@ -3,21 +3,23 @@
   outputs,
   pkgs,
   ...
-}: let
+}:
+let
   lib = pkgs.lib;
   symlinkRoot = "/home/goaty/nixos-config/dotfiles";
 
   dotfiles = import ./dotfiles.nix {
     inherit config lib symlinkRoot;
   };
-in {
+in
+{
   imports = [
     ./firefox.nix
-    ./nixvim.nix
     ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
     ./theming.nix
+    ./nixvim.nix
     dotfiles
   ];
 
@@ -101,7 +103,6 @@ in {
     melonDS
   ];
 
-
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -129,7 +130,7 @@ in {
   services.swww.enable = true;
 
   xresources.properties = {
-    "*background" =  "#282828";
+    "*background" = "#282828";
     "*foreground" = "#ebdbb2";
   };
 
@@ -140,7 +141,7 @@ in {
       wlrobs
       obs-backgroundremoval
       obs-pipewire-audio-capture
-      obs-vaapi #AMD hardware acceleration
+      obs-vaapi # AMD hardware acceleration
       obs-gstreamer
       obs-vkcapture
     ];

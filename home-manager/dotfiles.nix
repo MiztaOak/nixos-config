@@ -34,7 +34,6 @@
     "fish"
     "cava"
     "sway"
-    "i3status"
     "swayimg"
     "waybar"
   ];
