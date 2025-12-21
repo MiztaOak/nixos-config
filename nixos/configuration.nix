@@ -9,7 +9,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
 
   nixpkgs = {
     overlays = [
@@ -70,7 +71,10 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [ i3status swaysome ];
+    extraPackages = with pkgs; [
+      i3status
+      swaysome
+    ];
   };
 
   # Enable screen sharing
@@ -92,7 +96,7 @@
     enable = true;
     keyboards = {
       default = {
-        ids = ["*"];
+        ids = [ "*" ];
         settings = {
           main = {
             capslock = "enter";
@@ -129,22 +133,26 @@
   # MPD
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/goaty/Music";
-    extraConfig = ''
-      audio_output {
-        type "pipewire"
-        name "My PipeWire Output"
-      }
-      audio_output {
-        type "fifo"
-        name "my_fifo"
-        path "/tmp/mpd.fifo"
-        format "44100:16:2"
-      }
-    '';
+
+    settings = {
+
+      music_directory = "/home/goaty/Music";
+      audio_output = [
+        {
+          type = "pipewire";
+          name = "My PipeWire Output";
+        }
+        {
+          type = "fifo";
+          name = "my_fifo";
+          path = "/tmp/mpd.fifo";
+          format = "44100:16:2";
+        }
+      ];
+
+    };
     user = "goaty";
     # Optional:
-    network.listenAddress = "any"; # if you want to allow non-localhost connections
     startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
   };
   systemd.services.mpd.environment = {
@@ -152,30 +160,36 @@
     XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
 
-      auto-optimise-store = true;
+        auto-optimise-store = true;
+
+        # Cachix for nix-citizen
+        substituters = ["https://nix-citizen.cachix.org"];
+        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
+      };
+
+      optimise = {
+        automatic = true;
+        dates = [ "0:00" ];
+      };
+
+      #Currently replaced by nh
+      # gc = {
+      #   automatic = true;
+      #   dates = "weekly";
+      #   options = "--delete-older-than 30d";
+      # };
     };
-
-    optimise = {
-      automatic = true;
-      dates = [ "0:00" ];
-    };
-
-    #Currently replaced by nh
-    # gc = {
-    #   automatic = true;
-    #   dates = "weekly";
-    #   options = "--delete-older-than 30d";
-    # };
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -184,7 +198,10 @@
   users.users.goaty = {
     isNormalUser = true;
     description = "Goaty";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   home-manager.backupFileExtension = "hm-backup";
@@ -204,7 +221,6 @@
     clean.extraArgs = "--keep-since 7d --keep 10";
     flake = "/home/goaty/nixos-config";
   };
-
 
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
@@ -230,7 +246,6 @@
     neovim
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
-    # xwayland-satellite
     foot
   ];
 

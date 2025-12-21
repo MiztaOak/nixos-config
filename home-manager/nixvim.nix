@@ -1,4 +1,9 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -22,7 +27,6 @@
 
     clipboard.register = "unnamedplus";
     clipboard.providers.wl-copy.enable = true;
-
 
     extraConfigVim = lib.fileContents ./neovim/init.vim;
 
@@ -97,7 +101,7 @@
         enable = true;
         settings = {
           signs = {
-            add.text = "▎" ;
+            add.text = "▎";
             change.text = "▎";
             delete.text = "";
             topdelete.text = "";
@@ -113,12 +117,12 @@
           };
         };
       };
-      
+
       blink-cmp = {
-        enable = true; 
+        enable = true;
         settings = {
           keymap = {
-            preset = "super-tab";
+            preset = "enter";
           };
         };
       };
@@ -155,7 +159,7 @@
             command = true;
             terminal = false;
           };
-          skip_next = ''[=[[%w%%%'%[%"%.%`%$]]=]''; 
+          skip_next = ''[=[[%w%%%'%[%"%.%`%$]]=]'';
           skip_ts = [
             "string"
           ];

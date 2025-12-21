@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   outputs,
   pkgs,
@@ -43,6 +44,7 @@ in
 
   home.packages = with pkgs; [
 
+    hyfetch
     fastfetch
 
     #Cloud
@@ -73,6 +75,8 @@ in
     bc
     nautilus
     bitwarden-desktop
+    evince
+    
 
     # misc
     tree
@@ -101,6 +105,7 @@ in
     protonup-qt
     wowup-cf
     melonDS
+    inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
   ];
 
   # basic configuration of git, please change to your own
