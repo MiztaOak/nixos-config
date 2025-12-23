@@ -2,15 +2,18 @@
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [ "en-US" "se" ];
+    languagePacks = [
+      "en-US"
+      "se"
+    ];
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       Homepage = "previous-session";
       ExtensionSettings = {
-        # Gruvbox theme
-        "{21ab01a8-2464-4824-bccb-6db15659347e}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/gruvbox-material-soft-theme/latest.xpi";
+        # Gruvbox Light theme
+        "{4b0b1791-6b73-4d9b-b55b-150cc186665e}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/gruvbox-light-theme/latest.xpi";
           installation_mode = "force_installed";
         };
         # Bitdefender
@@ -49,7 +52,17 @@
           installation_mode = "force_installed";
         };
       };
+      GenerativeAI = {
+        Enabled = false;
+        ChatBot = false;
+        LinkPreviews = false;
+        TabGroups = false;
+      };
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
       HardwareAcceleration = true;
+      PromptForDownloadLocation = true;
+      AutofillCreditCardEnabled = false;
       Preferences = {
         "privacy.clearOnShutdown.history" = false;
         "browser.urlbar.suggest.bookmark" = true;
@@ -62,18 +75,28 @@
         "browser.startup.homepage" = "about:home";
         "sidebar.verticalTabs" = true;
         #Kill all ai features
-        "browser.ml.enable" = false; 
-        "browser.ml.chat.enabled" = false; 
+        "browser.ml.enable" = false;
+        "browser.ml.chat.enabled" = false;
         "browser.ml.chat.sidebar" = false;
-        "browser.ml.chat.menu" = false; 
-        "browser.ml.chat.page" = false; 
-        "extensions.ml.enabled" = false; 
+        "browser.ml.chat.menu" = false;
+        "browser.ml.chat.page" = false;
+        "extensions.ml.enabled" = false;
         "browser.ml.linkPreview.enabled" = false;
-        "browser.tabs.groups.smart.enabled" = false; 
+        "browser.tabs.groups.smart.enabled" = false;
         "browser.tabs.groups.smart.userEnabled" = false;
-        "pdfjs.enableAltTextModelDownload" = false; 
-        "pdfjs.enableGuessAltText" = false; 
+        "pdfjs.enableAltTextModelDownload" = false;
+        "pdfjs.enableGuessAltText" = false;
       };
+    };
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
     };
   };
 }

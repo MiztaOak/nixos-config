@@ -1,6 +1,5 @@
 /*    GRUVBOX DARK PALETTE
       --------------------		
-*/
 @define-color bg        #282828;
 @define-color gray1     #928374;
 @define-color red1      #cc241d;
@@ -32,9 +31,10 @@
 @define-color fg0       #fbf1c7;
 @define-color orange1   #d65d0e;
 @define-color orange2   #af3a03;
-
+*/
 /*    GRUVBOX LIGHT PALETTE
       ---------------------     
+*/
 @define-color bg        #fbf1c7;
 @define-color gray1     #928374;
 @define-color red1      #cc241d;
@@ -66,12 +66,11 @@
 @define-color fg0       #282828;
 @define-color orange1   #d65d0e;
 @define-color orange2   #af3a03;
-*/
 
 /*	COLOR BINDS
 	-----------			*/
-@define-color waybar            @bg;
-@define-color text-main         @fg;
+@define-color waybar            @bg1;
+@define-color text-main         @fg0;
 @define-color text-opposite     @bg;
 @define-color text-alert        @red2;
 @define-color alert             @red1;
@@ -80,9 +79,9 @@
 @define-color workspaces        @yellow1;
 @define-color workspaces-hover  @yellow2;
 @define-color workspaces-active @bg;
-@define-color workspaces-full   @fg3;
+@define-color workspaces-full   @blue2;
 @define-color workspaces-bg     @bg3;
-@define-color workspaces-empty  @bg1;
+@define-color workspaces-empty  @bg3;
 @define-color day               @orange1;
 @define-color time              @orange2;
 @define-color date              @orange1;

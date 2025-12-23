@@ -39,7 +39,7 @@ window#waybar.hidden {
   border:none;
   background-color: @workspaces-bg;
   /* border-bottom: 5px solid @workspaces-bg; */
-  margin-right: 3px;
+  /* margin-right: 3px; */
 }
 
 #workspaces button:hover {

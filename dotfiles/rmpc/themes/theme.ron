@@ -25,40 +25,40 @@
     ),
     progress_bar: (
         symbols: ["", "", "⭘", " ", " "],
-        track_style: (bg: "#3c3836"),
-        elapsed_style: (fg: "#d5c4a1", bg: "#3c3836"),
-        thumb_style: (fg: "#d5c4a1", bg: "#3c3836"),
+        track_style: (bg: "#ebdbb2"),
+        elapsed_style: (fg: "#504945", bg: "#ebdbb2"),
+        thumb_style: (fg: "#504945", bg: "#ebdbb2"),
     ),
     scrollbar: (
         symbols: ["│", "█", "▲", "▼"],
         track_style: (),
         ends_style: (),
-        thumb_style: (fg: "#689d6a"),
+        thumb_style: (fg: "#bdae93"),
     ),
     browser_column_widths: [20, 38, 42],
-    text_color: "#ebdbb2",
+    text_color: "#3c3836",
     //background_color: "#282828",
-    header_background_color: "#3c3836",
+    header_background_color: "#ebdbb2",
     modal_background_color: None,
     modal_backdrop: false,
-    tab_bar: (active_style: (fg: "#3c3836", bg: "#d5c4a1", modifiers: "Bold"), inactive_style: ()),
-    borders_style: (fg: "#6e738d"),
-    highlighted_item_style: (fg: "#d5c4a1", modifiers: "Bold"),
-    current_item_style: (fg: "#fbf1c1", bg: "#689d6a", modifiers: "Bold"),
-    highlight_border_style: (fg: "#d79921"),
+    tab_bar: (active_style: (fg: "#3c3836", bg: "#504945", modifiers: "Bold"), inactive_style: ()),
+    borders_style: (fg: "#6e738d"), //strange
+    highlighted_item_style: (fg: "#504945", modifiers: "Bold"),
+    current_item_style: (fg: "#fbf1c7", bg: "#427b58", modifiers: "Bold"),
+    highlight_border_style: (fg: "#b57614"),
     song_table_format: [
         (
-            prop: (kind: Property(Artist), style: (fg: "#d79921"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Artist), style: (fg: "#b57614"), default: (kind: Text("Unknown"))),
             width: "50%",
             alignment: Right,
         ),
         (
-            prop: (kind: Text("-"), style: (fg: "#d79921"), default: (kind: Text("Unknown"))),
+            prop: (kind: Text("-"), style: (fg: "#b57614"), default: (kind: Text("Unknown"))),
             width: "1",
             alignment: Center,
         ),
         (
-            prop: (kind: Property(Title), style: (fg: "#98971a"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Title), style: (fg: "#79740e"), default: (kind: Text("Unknown"))),
             width: "50%",
         ),
     ],
@@ -66,23 +66,23 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "#d79921", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "#d79921", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "#d79921", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#b57614", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "#b57614", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#b57614", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#eed49f", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "#eed49f", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#3c3836", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "#3c3836", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
-                    (kind: Property(Song(Title)), style: (fg: "#98971a", modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (fg: "#98971a", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "#79740e", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "#79740e", modifiers: "Bold"))
                     )
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "#d79921", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "#d79921", modifiers: "Bold")),
-                    (kind: Text("% "), style: (fg: "#d79921", modifiers: "Bold"))
+                    (kind: Text("Vol: "), style: (fg: "#b57614", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "#b57614", modifiers: "Bold")),
+                    (kind: Text("% "), style: (fg: "#b57614", modifiers: "Bold"))
                 ]
             )
         ],

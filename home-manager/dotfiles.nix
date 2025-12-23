@@ -23,18 +23,19 @@
     "rofi/gruvbox-material.rasi"
     "rofi/wallSelect.rasi"
     "starship.toml"
+    "hyfetch.json"
   ];
 
   confDirs = map linkDir [
     "fastfetch"
     "mako"
-    "hypr"
     "rmpc"
     "wlogout"
     "fish"
     "cava"
     "sway"
     "swayimg"
+    "swaylock"
     "waybar"
   ];
 
