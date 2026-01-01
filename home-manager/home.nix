@@ -76,6 +76,7 @@ in
     nautilus
     bitwarden-desktop
     evince
+    gnome-calculator
     
 
     # misc
@@ -106,6 +107,7 @@ in
     wowup-cf
     melonDS
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
+    xivlauncher
   ];
 
   # basic configuration of git, please change to your own
