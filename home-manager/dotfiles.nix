@@ -22,7 +22,6 @@
   confFiles = map linkFile [
     "rofi/gruvbox-material.rasi"
     "rofi/wallSelect.rasi"
-    "starship.toml"
     "hyfetch.json"
   ];
 

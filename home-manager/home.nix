@@ -54,7 +54,6 @@ in
     obsidian
 
     #Terminal
-    starship
     fish
 
     # archives
