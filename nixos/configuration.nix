@@ -63,7 +63,36 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        i3status
+        feh
+      ];
+    };
+    # Configure keymap in X11
+    xkb = {
+      layout = "us,se";
+      options = "grp:win_space_toggle";
+    };
+
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+
+    libinput = {
+      enable = true;
+      mouse = {
+        accelProfile = "flat";
+        accelSpeed = "0";
+      };
+      touchpad = {
+        accelProfile = "flat";
+      };
+    };
+  };
 
   # Enable the ly Desktop Environment.
   services.displayManager.ly.enable = true;
@@ -84,12 +113,6 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
     ];
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   services.keyd = {
@@ -174,8 +197,8 @@
         auto-optimise-store = true;
 
         # Cachix for nix-citizen
-        substituters = ["https://nix-citizen.cachix.org"];
-        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
+        substituters = [ "https://nix-citizen.cachix.org" ];
+        trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
       };
 
       optimise = {
@@ -247,6 +270,7 @@
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
     foot
+    xrandr
   ];
 
   programs.dconf.enable = true;

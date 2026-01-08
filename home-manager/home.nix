@@ -21,6 +21,7 @@ in
     ./foot.nix
     ./theming.nix
     ./nixvim.nix
+    ./kitty.nix
     dotfiles
   ];
 
@@ -98,7 +99,7 @@ in
     reaper
 
     #Gaming
-    vesktop
+    stable.vesktop
     bolt-launcher
     lutris
     wine

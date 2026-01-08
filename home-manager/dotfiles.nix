@@ -36,6 +36,8 @@
     "swayimg"
     "swaylock"
     "waybar"
+    "i3"
+    "i3status"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
