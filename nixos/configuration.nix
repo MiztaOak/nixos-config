@@ -81,16 +81,17 @@
 
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
+  };
 
-    libinput = {
-      enable = true;
-      mouse = {
-        accelProfile = "flat";
-        accelSpeed = "0";
-      };
-      touchpad = {
-        accelProfile = "flat";
-      };
+  # Remove the god awful mouse acceleration
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";
+      accelSpeed = "0";
+    };
+    touchpad = {
+      accelProfile = "flat";
     };
   };
 

@@ -34,6 +34,6 @@
       "kitty_mod+h" = "previous_tab";
     };
 
-    themeFile = "GruvboxMaterialLightHard";
+    themeFile = "GruvboxMaterialLightSoft";
   };
 }
