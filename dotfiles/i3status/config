@@ -20,7 +20,7 @@ volume master {
 }
 
 tztime local {
-        format = "%m-%d %H:%M:%S "
+        format = "%d/%m %H:%M:%S"
         hide_if_equals_localtime = false
 }
 

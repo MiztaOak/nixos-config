@@ -21,7 +21,7 @@ in
     ./foot.nix
     ./theming.nix
     ./nixvim.nix
-    ./kitty.nix
+    ./alacritty.nix
     dotfiles
   ];
 
@@ -137,8 +137,8 @@ in
   services.swww.enable = true;
 
   xresources.properties = {
-    "*background" = "#282828";
-    "*foreground" = "#ebdbb2";
+    "*background" = "#ebdbb2";
+    "*foreground" = "#282828";
   };
 
   programs.obs-studio = {

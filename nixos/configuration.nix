@@ -81,16 +81,24 @@
 
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
+
+    inputClassSections = [
+      ''
+        Identifier "libinput pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "AccelProfile" "flat"
+      ''
+    ];
+
+    enableCtrlAltBackspace = true;
   };
 
   # Remove the god awful mouse acceleration
   services.libinput = {
     enable = true;
     mouse = {
-      accelProfile = "flat";
-      accelSpeed = "0";
-    };
-    touchpad = {
       accelProfile = "flat";
     };
   };
@@ -272,6 +280,7 @@
     gruvbox-gtk-theme
     foot
     xrandr
+    xclip
   ];
 
   programs.dconf.enable = true;
