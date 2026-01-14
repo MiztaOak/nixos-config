@@ -12,6 +12,9 @@
       terminal = {
         shell = "fish";
       };
+      env = {
+        XINIT_X11_SCALE_FACTOR = "1.0";
+      };
       font = {
         size = 12;
       };

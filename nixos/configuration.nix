@@ -62,14 +62,26 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
+  services.picom.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
 
+    videoDrivers = [ "amdgpu" ];
+
+    displayManager = {
+      lightdm = {
+        enable = true;
+        background = "#fbf1c7";
+      };
+    };
+
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        i3status
+        polybarFull
+        maim
         feh
       ];
     };
@@ -93,18 +105,28 @@
     ];
 
     enableCtrlAltBackspace = true;
+    exportConfiguration = true;
   };
+
 
   # Remove the god awful mouse acceleration
   services.libinput = {
     enable = true;
     mouse = {
       accelProfile = "flat";
+      middleEmulation = false;
     };
   };
-
-  # Enable the ly Desktop Environment.
-  services.displayManager.ly.enable = true;
+  
+  # # Enable the ly Desktop Environment.
+  services.displayManager = {
+    # ly.enable = true;
+    defaultSession = "none+i3";
+    autoLogin = {
+      enable = true;
+      user = "goaty";
+    };
+  };
 
   programs.sway = {
     enable = true;

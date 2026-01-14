@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   home.shellAliases.v = "nvim";

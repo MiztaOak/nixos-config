@@ -25,6 +25,12 @@
         default_family = "JetBrainsMono Nerd Font Mono";
         default_size = "12pt";
       };
+      completion = {
+        web_history = {
+          max_items = 0;
+        };
+      };
+      auto_save.session = true;
     };
     searchEngines = {
       w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";

@@ -11,8 +11,6 @@
 
     grim
     slurp
-    maim
-
   ];
 
   services.polkit-gnome.enable = true;

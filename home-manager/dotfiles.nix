@@ -38,6 +38,7 @@
     "waybar"
     "i3"
     "i3status"
+    "polybar"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
