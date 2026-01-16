@@ -13,12 +13,22 @@ configuration {
 
 //----- Global Properties -----//
 
+//dark
+//* {
+//main-bg: #282828cc;
+//main-fg: #a89984;
+//select-bg: #665c54;
+//select-fg: #ebdbb2;
+//select-border: #D79921;
+//}
+
+//light
 * {
-main-bg: #282828cc;
-main-fg: #a89984;
-select-bg: #665c54;
-select-fg: #ebdbb2;
-select-border: #D79921;
+main-bg: #fbf1c7cc;
+main-fg: #3c3836;
+select-bg: #bdae93;
+select-fg: #3c3836;
+select-border: #b57614;
 }
 
 //----- Main Window -----//

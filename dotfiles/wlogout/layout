@@ -1,18 +1,18 @@
 {
     "label" : "lock",
-    "action" : "hyprlock",
+    "action" : "swaylock",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "hyprlock & systemctl hibernate",
+    "action" : "swaylock & systemctl hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit & niri msg action quit --skip-confirmation",
+    "action" : "exit sway",
     "text" : "Logout",
     "keybind" : "e"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "hyprlock & systemctl suspend",
+    "action" : "swaylock & systemctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

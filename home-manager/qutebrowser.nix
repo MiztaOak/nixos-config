@@ -19,12 +19,18 @@
     settings = {
       changelog_after_upgrade = "never";
       colors = {
-        webpage.preferred_color_scheme = "dark";
+        webpage.preferred_color_scheme = "light";
       };
       fonts = {
         default_family = "JetBrainsMono Nerd Font Mono";
         default_size = "12pt";
       };
+      completion = {
+        web_history = {
+          max_items = 0;
+        };
+      };
+      auto_save.session = true;
     };
     searchEngines = {
       w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
@@ -33,17 +39,17 @@
       np = "https://search.nixos.org/packages?query={}";
       sf = "https://scryfall.com/search?q={}";
     };
-    extraConfig = lib.fileContents ./gruvbox.py;
+    extraConfig = lib.fileContents ./gruvbox-light.py;
   };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
-    };
-  };
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   defaultApplications = {
+  #     "text/html" = "org.qutebrowser.qutebrowser.desktop";
+  #     "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+  #     "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+  #     "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
+  #     "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+  #   };
+  # };
 }

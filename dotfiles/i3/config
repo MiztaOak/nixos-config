@@ -10,25 +10,27 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
 # Your preferred application launcher
 set $menu rofi -show drun
 
 set $browser qutebrowser
 
-### Output configuration
+set $ws ~/nixos-config/scripts/i3ws.sh
+
+exec_always --no-startup-id xrandr --output DisplayPort-2 --primary --mode 1920x1080 --rate 144 --right-of HDMI-A-0 --output HDMI-A-0 --mode 1920x1080 --rate 75
+exec_always --no-startup-id ~/nixos-config/scripts/polybar.sh
+exec_always --no-startup-id xset s off -dpms
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/girl-2.png
+
+# ### Output configuration
+# #
+# # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# # output * bg /home/goaty/wallpapers/initial-d-trueno-anime-police-girl-8k-eg.jpg fill
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /home/goaty/wallpapers/initial-d-trueno-anime-police-girl-8k-eg.jpg fill
+# output DP-3 mode 1920x1080@144Hz position 1920 0
+# output HDMI-A-1 mode 1920x1080@75Hz position 0 0
 
-output DP-3 mode 1920x1080@144Hz position 1920 0
-output HDMI-A-1 mode 1920x1080@75Hz position 0 0
-
-exec swww-daemon
-
-exec mako
-
-exec waybar
 #
 # Example configuration:
 #
@@ -49,27 +51,30 @@ exec waybar
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
+# ### Input configuration
+# #
+# # Example configuration:
+# #
+#   input type:touchpad {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
 #
-# Example configuration:
+#   input type:keyboard {
+#       xkb_layout "us,se"
+#       xkb_options "grp:win_space_toggle"
+#   }
 #
-  input type:touchpad {
-      dwt enabled
-      tap enabled
-      natural_scroll enabled
-      middle_emulation enabled
-  }
-
-  input type:keyboard {
-      xkb_layout "us,se"
-      xkb_options "grp:win_space_toggle"
-  }
-
-  input type:keyboard repeat_delay 200
-  input type:keyboard repeat_rate 35
+#   input type:keyboard repeat_delay 200
+#   input type:keyboard repeat_rate 35
 
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
+
+workspace 1:1 output DisplayPort-2
+workspace 2:1 output HDMI-A-0
 
 ### Key bindings
 #
@@ -84,24 +89,26 @@ exec waybar
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Open btop
-    bindsym $mod+Escape exec foot btop
+    # Swap program
+    bindsym $mod+Tab exec rofi -show window -mode window
 
-    bindsym $mod+Shift+w exec sh /home/goaty/nixos-config/scripts/swww.sh
+    # Open btop
+    bindsym $mod+Escape exec alacritty -e btop
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    # floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exit
 
-    bindsym Ctrl+Alt+Backspace exec wlogout
+    # bindsym Ctrl+Alt+Backspace exec wlogout
 #
 # Moving around:
 #
@@ -130,27 +137,27 @@ exec waybar
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 exec sh $ws switch 1
+    bindsym $mod+2 exec sh $ws switch 2
+    bindsym $mod+3 exec sh $ws switch 3
+    bindsym $mod+4 exec sh $ws switch 4
+    bindsym $mod+5 exec sh $ws switch 5
+    bindsym $mod+6 exec sh $ws switch 6
+    bindsym $mod+7 exec sh $ws switch 7
+    bindsym $mod+8 exec sh $ws switch 8
+    bindsym $mod+9 exec sh $ws switch 9
+    bindsym $mod+0 exec sh $ws switch 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+1 exec sh $ws move 1
+    bindsym $mod+Shift+2 exec sh $ws move 2
+    bindsym $mod+Shift+3 exec sh $ws move 3
+    bindsym $mod+Shift+4 exec sh $ws move 4
+    bindsym $mod+Shift+5 exec sh $ws move 5
+    bindsym $mod+Shift+6 exec sh $ws move 6
+    bindsym $mod+Shift+7 exec sh $ws move 7
+    bindsym $mod+Shift+8 exec sh $ws move 8
+    bindsym $mod+Shift+9 exec sh $ws move 9
+    bindsym $mod+Shift+0 exec sh $ws move 10
 
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
@@ -172,10 +179,10 @@ exec waybar
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+m floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+m focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -219,15 +226,15 @@ bindsym $mod+r mode "resize"
 # Utilities:
 #
     # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    # bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    # bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    # bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # # Special keys to adjust brightness via brightnessctl
+    # bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym $mod+Shift+s exec sh ~/nixos-config/scripts/snap.sh
+    bindsym $mod+Shift+s exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/Pictures/Screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/Pictures//Screenshots/screenshot_$NOW.png
 
 #
 # Style Changes
@@ -235,7 +242,7 @@ bindsym $mod+r mode "resize"
     font pango:JetBrainsMono Nerd Font Mono,Font Awesome 10
     #client.<class> <border> <background> <text> [<indicator> [<child_border>]]
     client.focused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #076678
-    client.unfocused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
+    client.unfocused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4
     client.focused_inactive #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
 
     #default_border normal 3
@@ -254,16 +261,22 @@ bindsym $mod+r mode "resize"
 #     # The default just shows the current date and time.
 #     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 #     status_command i3status
+#     strip_workspace_numbers yes
+#     # workspace_command sh ~/nixos-config/scripts/i3ws_name.sh
 #
-#     font pango: JetBrainsMono Nerd Font Mono,Font Awesome 12
+#     font pango: JetBrainsMono Nerd Font Mono,Font Awesome 11
 #
 #     colors {
-#         statusline #ebdbb2
-#         background #282828
-#         focused_workspace #ebdbb2 #ebdbb2 #282828
-#         inactive_workspace #504945 #504945 #ebdbb2
+#         statusline #282828
+#         background #ebdbb2
+#         focused_workspace #076678 #076678 #ebdbb2
+#         active_workspace #076678 #076678 #ebdbb2
+#         inactive_workspace #bdae93 #bdae93 #282828
 #     }
+#
+#     tray_output primary 
+#     tray_padding 3
+#
+#     # top right bottom left padding
+#     padding 0 5 0 2
 # }
-
-include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*.conf

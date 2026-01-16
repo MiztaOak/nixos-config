@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   home.shellAliases.v = "nvim";
@@ -27,6 +27,7 @@
 
     clipboard.register = "unnamedplus";
     clipboard.providers.wl-copy.enable = true;
+    clipboard.providers.xclip.enable = true;
 
     extraConfigVim = lib.fileContents ./neovim/init.vim;
 

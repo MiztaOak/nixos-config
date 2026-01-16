@@ -6,7 +6,8 @@
   "spacing": 16,
   // Choose the order of the modules
   "modules-left": [
-    "sway/workspaces"
+    "sway/workspaces",
+    "tray"
   ],
   "modules-center": [
     "mpd"
@@ -14,7 +15,6 @@
     // "cava"
   ],
   "modules-right": [
-    "tray",
     "sway/language",
     "cpu",
     "memory",

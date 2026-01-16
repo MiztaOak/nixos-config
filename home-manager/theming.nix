@@ -7,12 +7,10 @@
     wl-clipboard
     mako
     waybar
+    swaylock-effects
 
     grim
     slurp
-
-    #should prob be replaced with swaylock
-    hyprlock
   ];
 
   services.polkit-gnome.enable = true;
@@ -32,13 +30,13 @@
       package = pkgs.nerd-fonts.jetbrains-mono;
     };
     theme = {
-      name = "Gruvbox-Dark";
+      name = "Gruvbox-Light";
       package = pkgs.gruvbox-gtk-theme;
     };
   };
 
   dconf = {
     enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-light";
   };
 }

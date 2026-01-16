@@ -1,0 +1,18 @@
+screenshots
+clock
+indicator
+indicator-radius=100
+indicator-thickness=7
+effect-blur=7x5
+effect-vignette=0.5:0.5
+ring-color=076678
+text-color=3c3836
+key-hl-color=427b58
+line-color=00000000
+inside-color=fbf1c7
+layout-bg-color=00000000
+layout-text-color=3c3836
+separator-color=00000000
+grace=2
+font="JetBrainsMono Nerd Font Mono"
+fade-in=0.2

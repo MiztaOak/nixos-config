@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     fish
-    starship
   ];
 
   programs.kitty = {
@@ -15,7 +14,7 @@
     settings = {
       shell = "fish";
       enable_audio_bell = false;
-      hide_window_decorations = true;
+      hide_window_decorations = false;
       enabled_layouts = "splits:split_axis=horizontal";
       background_opacity = 0.95;
     };
@@ -35,6 +34,6 @@
       "kitty_mod+h" = "previous_tab";
     };
 
-    themeFile = "GruvboxMaterialDarkMedium";
+    themeFile = "GruvboxMaterialLightSoft";
   };
 }

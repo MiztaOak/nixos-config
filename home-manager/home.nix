@@ -15,12 +15,13 @@ let
 in
 {
   imports = [
-    ./firefox.nix
+    # ./firefox.nix
     ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
     ./theming.nix
     ./nixvim.nix
+    ./alacritty.nix
     dotfiles
   ];
 
@@ -47,6 +48,8 @@ in
     hyfetch
     fastfetch
 
+    vivaldi
+
     #Cloud
     nextcloud-client
 
@@ -54,7 +57,6 @@ in
     obsidian
 
     #Terminal
-    starship
     fish
 
     # archives
@@ -76,6 +78,7 @@ in
     nautilus
     bitwarden-desktop
     evince
+    gnome-calculator
     
 
     # misc
@@ -98,7 +101,7 @@ in
     reaper
 
     #Gaming
-    vesktop
+    stable.vesktop
     bolt-launcher
     lutris
     wine
@@ -106,6 +109,7 @@ in
     wowup-cf
     melonDS
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
+    xivlauncher
   ];
 
   # basic configuration of git, please change to your own
@@ -135,8 +139,8 @@ in
   services.swww.enable = true;
 
   xresources.properties = {
-    "*background" = "#282828";
-    "*foreground" = "#ebdbb2";
+    "*background" = "#ebdbb2";
+    "*foreground" = "#282828";
   };
 
   programs.obs-studio = {

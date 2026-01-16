@@ -62,11 +62,71 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.picom.enable = true;
 
-  # Enable the ly Desktop Environment.
-  services.displayManager.ly.enable = true;
+  # Enable the X11 windowing system.
+  services.xserver = {
+    enable = true;
+
+    videoDrivers = [ "amdgpu" ];
+
+    displayManager = {
+      lightdm = {
+        enable = true;
+        background = "#fbf1c7";
+      };
+    };
+
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        polybarFull
+        maim
+        feh
+      ];
+    };
+    # Configure keymap in X11
+    xkb = {
+      layout = "us,se";
+      options = "grp:win_space_toggle";
+    };
+
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+
+    inputClassSections = [
+      ''
+        Identifier "libinput pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "AccelProfile" "flat"
+      ''
+    ];
+
+    enableCtrlAltBackspace = true;
+    exportConfiguration = true;
+  };
+
+
+  # Remove the god awful mouse acceleration
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";
+      middleEmulation = false;
+    };
+  };
+  
+  # # Enable the ly Desktop Environment.
+  services.displayManager = {
+    # ly.enable = true;
+    defaultSession = "none+i3";
+    autoLogin = {
+      enable = true;
+      user = "goaty";
+    };
+  };
 
   programs.sway = {
     enable = true;
@@ -84,12 +144,6 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
     ];
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   services.keyd = {
@@ -174,8 +228,8 @@
         auto-optimise-store = true;
 
         # Cachix for nix-citizen
-        substituters = ["https://nix-citizen.cachix.org"];
-        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
+        substituters = [ "https://nix-citizen.cachix.org" ];
+        trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
       };
 
       optimise = {
@@ -247,6 +301,8 @@
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
     foot
+    xrandr
+    xclip
   ];
 
   programs.dconf.enable = true;
@@ -255,6 +311,8 @@
 
   #Add nerd font
   fonts.packages = with pkgs; [
+    font-awesome
+    takao
     nerd-fonts.jetbrains-mono
   ];
 
