@@ -15,7 +15,7 @@ let
 in
 {
   imports = [
-    ./firefox.nix
+    # ./firefox.nix
     ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
@@ -47,6 +47,8 @@ in
 
     hyfetch
     fastfetch
+
+    vivaldi
 
     #Cloud
     nextcloud-client

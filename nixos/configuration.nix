@@ -311,6 +311,8 @@
 
   #Add nerd font
   fonts.packages = with pkgs; [
+    font-awesome
+    takao
     nerd-fonts.jetbrains-mono
   ];
 
