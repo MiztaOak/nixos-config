@@ -62,7 +62,7 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  services.picom.enable = true;
+  # services.picom.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -121,7 +121,8 @@
   # # Enable the ly Desktop Environment.
   services.displayManager = {
     # ly.enable = true;
-    defaultSession = "none+i3";
+    defaultSession = "sway";
+    # defaultSession = "none+i3";
     autoLogin = {
       enable = true;
       user = "goaty";

@@ -19,7 +19,7 @@
     "cpu",
     "memory",
     // "disk",
-    "network",
+    // "network",
     "wireplumber",
     "battery",
     "clock"

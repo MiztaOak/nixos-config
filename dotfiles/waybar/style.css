@@ -49,21 +49,20 @@ window#waybar.hidden {
   background: @workspaces-bg;
 }
 
-#workspaces button.focused {
-  color: @workspaces-active;
-  background-color: @workspaces-full;
-  /* border-bottom: 5px solid @workspaces-active */
-}
-
-#workspaces button.visible {
-  color: @workspaces-active;
-  background-color: @workspaces-full;
-}
-
 #workspaces button.empty {
   background-color: @workspaces-empty;
   color: @fg;
   /* border-bottom: 5px solid @workspaces-empty; */
+}
+
+#workspaces button.visible {
+  background-color: @workspaces-visible;
+}
+
+#workspaces button.focused {
+  color: @workspaces-active;
+  background-color: @workspaces-full;
+  /* border-bottom: 5px solid @workspaces-active */
 }
 
 #workspaces button.empty.focused {

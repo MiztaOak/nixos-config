@@ -79,9 +79,10 @@
 @define-color workspaces        @yellow1;
 @define-color workspaces-hover  @yellow2;
 @define-color workspaces-active @bg;
+@define-color workspaces-visible @bg2;
 @define-color workspaces-full   @blue2;
-@define-color workspaces-bg     @bg3;
-@define-color workspaces-empty  @bg3;
+@define-color workspaces-bg     @bg1;
+@define-color workspaces-empty  @bg1;
 @define-color day               @orange1;
 @define-color time              @orange2;
 @define-color date              @orange1;
