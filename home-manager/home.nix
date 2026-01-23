@@ -22,6 +22,7 @@ in
     ./theming.nix
     ./nixvim.nix
     ./alacritty.nix
+    ./helix.nix
     dotfiles
   ];
 

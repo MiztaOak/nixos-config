@@ -108,7 +108,6 @@
     exportConfiguration = true;
   };
 
-
   # Remove the god awful mouse acceleration
   services.libinput = {
     enable = true;
@@ -117,7 +116,7 @@
       middleEmulation = false;
     };
   };
-  
+
   # # Enable the ly Desktop Environment.
   services.displayManager = {
     # ly.enable = true;
@@ -310,6 +309,7 @@
     foot
     xrandr
     xclip
+    helix
   ];
 
   programs.dconf.enable = true;
