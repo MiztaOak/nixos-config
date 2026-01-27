@@ -68,6 +68,8 @@
   services.xserver = {
     enable = true;
 
+    # enableTearFree = true;
+
     videoDrivers = [ "amdgpu" ];
 
     displayManager = {
@@ -85,6 +87,7 @@
         feh
       ];
     };
+     
     # Configure keymap in X11
     xkb = {
       layout = "us,se";
@@ -93,16 +96,6 @@
 
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
-
-    inputClassSections = [
-      ''
-        Identifier "libinput pointer catchall"
-        MatchIsPointer "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-        Option "AccelProfile" "flat"
-      ''
-    ];
 
     enableCtrlAltBackspace = true;
     exportConfiguration = true;
@@ -120,8 +113,8 @@
   # # Enable the ly Desktop Environment.
   services.displayManager = {
     # ly.enable = true;
-    defaultSession = "sway";
-    # defaultSession = "none+i3";
+    # defaultSession = "sway";
+    defaultSession = "none+i3";
     autoLogin = {
       enable = true;
       user = "goaty";
@@ -132,8 +125,19 @@
     enable = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
-      i3status
       swaysome
+      swww
+      mako
+      waybar
+      dex
+      foot
+      rofi
+      slurp
+      grim
+      wl-clipboard
+      wlogout
+      swaylock-effects
+      btop
     ];
   };
 
@@ -160,6 +164,8 @@
       };
     };
   };
+
+  services.ratbagd.enable = true;
 
   # Enable Mullvad VPN
   services.mullvad-vpn = {
@@ -311,6 +317,12 @@
     xclip
     helix
   ];
+
+  programs.zsh.enable = true;
+
+  users.extraUsers.goaty = {
+    shell = pkgs.zsh;
+  };
 
   programs.dconf.enable = true;
 

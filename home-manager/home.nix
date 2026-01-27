@@ -81,7 +81,7 @@ in
     bitwarden-desktop
     evince
     gnome-calculator
-    
+    piper
 
     # misc
     tree
@@ -112,6 +112,12 @@ in
     melonDS
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     xivlauncher
+
+    #Suckless
+    (pkgs.st.overrideAttrs (_: {
+      src = inputs.st;
+      patches = [ ];
+    }))
   ];
 
   # basic configuration of git, please change to your own
@@ -125,6 +131,35 @@ in
       credential = {
         helper = "oauth";
       };
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    initContent = ''
+      hyfetch
+    '';
+
+    shellAliases = {
+      switch = "nh os switch ~/nixos-config";
+      update = "nh os switch ~/nixos-config --update";
+    };
+
+    history = {
+      size = 10000;
+      path = "$HOME/.zsh_history";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+      ];
+      theme = "intheloop";
     };
   };
 
@@ -167,6 +202,13 @@ in
       "x-scheme-handler/about" = "vivaldi-stable.desktop";
       "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
     };
+  };
+
+  xdg.autostart = {
+    enable = true;
+    entries = [
+      "${pkgs.mullvad-vpn}/share/applications/mullvad-vpn.desktop"
+    ];
   };
 
   # This value determines the home Manager release that your

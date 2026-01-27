@@ -26,6 +26,13 @@
     swww.url = "github:LGFae/swww";
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
+
+    self.submodules = true;
+
+    st = {
+      url = "./st";
+      flake = false;
+    };
   };
 
   outputs =
@@ -39,8 +46,23 @@
       inherit (self) outputs;
       # Supported systems for your flake packages, shell, etc.
       system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in
     {
+      devShells.${system}.suckless = pkgs.mkShell {
+        packages = with pkgs; [
+          pkg-config
+          xorg.libX11
+          xorg.libXft
+          xorg.libXinerama
+          fontconfig
+          freetype
+          harfbuzz
+          gcc
+          gnumake
+        ];
+      };
+
       # Your custom packages
       # Accessible through 'nix build', 'nix shell', etc
       packages = import ./pkgs nixpkgs.legacyPackages.${system};

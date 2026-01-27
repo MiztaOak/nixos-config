@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term st -e zsh
 # Your preferred application launcher
 set $menu rofi -show drun
 
@@ -21,7 +21,7 @@ set $ws ~/nixos-config/scripts/i3ws.sh
 exec_always --no-startup-id xrandr --output DisplayPort-2 --primary --mode 1920x1080 --rate 144 --right-of HDMI-A-0 --output HDMI-A-0 --mode 1920x1080 --rate 75
 exec_always --no-startup-id ~/nixos-config/scripts/polybar.sh
 exec_always --no-startup-id xset s off -dpms
-exec_always --no-startup-id feh --bg-fill ~/wallpapers/girl-2.png
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/cyber-asian-girl-1080.png
 
 # ### Output configuration
 # #
@@ -82,6 +82,8 @@ workspace 2:1 output HDMI-A-0
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    # Backup in case st shits the bed
+    bindsym $mod+Shift+Ctrl+Return exec alacritty
 
     # Kill focused window
     bindsym $mod+q kill
@@ -93,7 +95,7 @@ workspace 2:1 output HDMI-A-0
     bindsym $mod+Tab exec rofi -show window -mode window
 
     # Open btop
-    bindsym $mod+Escape exec alacritty -e btop
+    bindsym $mod+Escape exec st -e btop
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -242,8 +244,10 @@ bindsym $mod+r mode "resize"
     font pango:JetBrainsMono Nerd Font Mono,Font Awesome 10
     #client.<class> <border> <background> <text> [<indicator> [<child_border>]]
     client.focused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #076678
-    client.unfocused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c41
+    client.unfocused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
     client.focused_inactive #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
+    client.placeholder #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
+    client.urgent #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #9d0006
 
     #default_border normal 3
     default_border pixel 3
