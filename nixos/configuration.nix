@@ -68,16 +68,18 @@
   services.xserver = {
     enable = true;
 
+    videoDrivers = ["amdgpu"];
+
     # enableTearFree = true;
 
-    videoDrivers = [ "amdgpu" ];
-
-    displayManager = {
-      lightdm = {
-        enable = true;
-        background = "#fbf1c7";
-      };
-    };
+    # displayManager = {
+    #   lightdm = {
+    #     enable = true;
+    #     background = "#fbf1c7";
+    #   };
+    # };
+    
+    displayManager.startx.enable = true;
 
     windowManager.i3 = {
       enable = true;
@@ -112,13 +114,13 @@
 
   # # Enable the ly Desktop Environment.
   services.displayManager = {
-    # ly.enable = true;
+    ly.enable = true;
     # defaultSession = "sway";
-    defaultSession = "none+i3";
-    autoLogin = {
-      enable = true;
-      user = "goaty";
-    };
+    # defaultSession = "none+i3";
+    # autoLogin = {
+    #   enable = true;
+    #   user = "goaty";
+    # };
   };
 
   programs.sway = {
@@ -126,7 +128,6 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       swaysome
-      swww
       mako
       waybar
       dex
