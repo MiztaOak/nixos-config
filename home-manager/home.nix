@@ -172,9 +172,6 @@ in
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # Start the swww daemon
-  services.swww.enable = true;
-
   xresources.properties = {
     "*background" = "#ebdbb2";
     "*foreground" = "#282828";
