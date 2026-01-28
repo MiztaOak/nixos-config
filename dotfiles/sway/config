@@ -29,6 +29,8 @@ exec swww-daemon
 exec mako
 
 exec waybar
+
+exec dex -a
 #
 # Example configuration:
 #
