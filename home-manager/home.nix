@@ -20,7 +20,6 @@ in
     ./qutebrowser.nix
     ./foot.nix
     ./theming.nix
-    ./nixvim.nix
     ./alacritty.nix
     ./helix.nix
     dotfiles
@@ -112,12 +111,6 @@ in
     melonDS
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     xivlauncher
-
-    #Suckless
-    (pkgs.st.overrideAttrs (_: {
-      src = inputs.st;
-      patches = [ ];
-    }))
   ];
 
   # basic configuration of git, please change to your own

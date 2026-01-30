@@ -13,26 +13,26 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    #Nixvim
-    nixvim = {
-      # For unstable
-      url = "github:nix-community/nixvim";
-      # url = "github:nix-community/nixvim/nixos-25.11";
+    # #Nixvim
+    # nixvim = {
+    #   # For unstable
+    #   url = "github:nix-community/nixvim";
+    #   # url = "github:nix-community/nixvim/nixos-25.11";
 
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     #swww
     swww.url = "github:LGFae/swww";
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
 
-    self.submodules = true;
-
-    st = {
-      url = "./st";
-      flake = false;
+    # Mangowc
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs =
@@ -40,29 +40,15 @@
       self,
       nixpkgs,
       home-manager,
+      mango,
       ...
     }@inputs:
     let
       inherit (self) outputs;
       # Supported systems for your flake packages, shell, etc.
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
     in
     {
-      devShells.${system}.suckless = pkgs.mkShell {
-        packages = with pkgs; [
-          pkg-config
-          xorg.libX11
-          xorg.libXft
-          xorg.libXinerama
-          fontconfig
-          freetype
-          harfbuzz
-          gcc
-          gnumake
-        ];
-      };
-
       # Your custom packages
       # Accessible through 'nix build', 'nix shell', etc
       packages = import ./pkgs nixpkgs.legacyPackages.${system};
@@ -112,6 +98,8 @@
             ./nixos/nixos-desktop/desktop.nix
             ./nixos/nixos-desktop/hardware-configuration.nix
 
+            mango.nixosModules.mango
+            
             home-manager.nixosModules.home-manager
             {
               home-manager.users.goaty =

@@ -79,16 +79,16 @@
     #   };
     # };
     
-    displayManager.startx.enable = true;
+    # displayManager.startx.enable = true;
 
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        polybarFull
-        maim
-        feh
-      ];
-    };
+    # windowManager.i3 = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     polybarFull
+    #     maim
+    #     feh
+    #   ];
+    # };
      
     # Configure keymap in X11
     xkb = {
@@ -141,6 +141,8 @@
       btop
     ];
   };
+
+  programs.mango.enable = true;
 
   # Enable screen sharing
   xdg.portal = {
@@ -314,9 +316,10 @@
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
     foot
-    xrandr
-    xclip
+    # xrandr
+    # xclip
     helix
+    wlr-randr
   ];
 
   programs.zsh.enable = true;
@@ -327,7 +330,7 @@
 
   programs.dconf.enable = true;
 
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "hx";
 
   #Add nerd font
   fonts.packages = with pkgs; [

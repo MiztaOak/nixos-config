@@ -27,6 +27,10 @@ window#waybar.hidden {
 #workspaces{
 }
 
+#tags {
+  
+}
+
 #cpu{
 }
 
@@ -72,6 +76,51 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
+  color: @alert;
+}
+
+#tags button {
+  font-size: 14px;
+  padding: 5px 0px;
+  color: @fg0;
+  border-radius:0;
+  outline:none;
+  border:none;
+  background-color: @workspaces-bg;
+  /* border-bottom: 5px solid @tags-bg; */
+  /* margin-right: 3px; */
+}
+
+#tags button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  color:@tags-hover; 
+  background: @tags-bg;
+}
+
+#tags button.empty {
+  background-color: @workspaces-empty;
+  color: @fg;
+  /* border-bottom: 5px solid @tags-empty; */
+}
+
+#tags button.visible {
+  background-color: @workspaces-visible;
+}
+
+#tags button.focused {
+  color: @workspaces-active;
+  background-color: @workspaces-full;
+  /* border-bottom: 5px solid @tags-active */
+}
+
+#tags button.empty.focused {
+  background-color: @workspaces-full;
+  color: @workspaces-active;
+  /* border-bottom: 5px solid @tags-active */
+}
+
+#tags button.urgent {
   color: @alert;
 }
 

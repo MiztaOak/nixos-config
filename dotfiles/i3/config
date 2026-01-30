@@ -18,7 +18,7 @@ set $browser qutebrowser
 
 set $ws ~/nixos-config/scripts/i3ws.sh
 
-exec_always --no-startup-id xrandr --output DisplayPort-2 --primary --mode 1920x1080 --rate 144 --right-of HDMI-A-0 --output HDMI-A-0 --mode 1920x1080 --rate 75
+exec_always --no-startup-id ~/nixos-config/scripts/xorg_startup.sh
 exec_always --no-startup-id ~/nixos-config/scripts/polybar.sh
 exec_always --no-startup-id xset s off -dpms
 exec_always --no-startup-id feh --bg-fill ~/wallpapers/cyber-asian-girl-1080.png
@@ -73,8 +73,8 @@ exec_always --no-startup-id feh --bg-fill ~/wallpapers/cyber-asian-girl-1080.png
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
-workspace 1:1 output DisplayPort-2
-workspace 2:1 output HDMI-A-0
+workspace 1:1 output DisplayPort-3
+workspace 2:1 output HDMI-1
 
 ### Key bindings
 #

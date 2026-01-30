@@ -36,8 +36,7 @@
     "swayimg"
     "swaylock"
     "waybar"
-    "i3"
-    "polybar"
+    "mango"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
