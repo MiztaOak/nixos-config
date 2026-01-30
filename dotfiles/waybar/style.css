@@ -87,21 +87,18 @@ window#waybar.hidden {
   outline:none;
   border:none;
   background-color: @workspaces-bg;
-  /* border-bottom: 5px solid @tags-bg; */
-  /* margin-right: 3px; */
 }
 
 #tags button:hover {
   box-shadow: none;
   text-shadow: none;
-  color:@tags-hover; 
-  background: @tags-bg;
+  color: @workspace-full; 
+  background: @waybar-bg;
 }
 
 #tags button.empty {
   background-color: @workspaces-empty;
   color: @fg;
-  /* border-bottom: 5px solid @tags-empty; */
 }
 
 #tags button.visible {

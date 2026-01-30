@@ -62,24 +62,11 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # services.picom.enable = true;
-
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
 
     videoDrivers = ["amdgpu"];
-
-    # enableTearFree = true;
-
-    # displayManager = {
-    #   lightdm = {
-    #     enable = true;
-    #     background = "#fbf1c7";
-    #   };
-    # };
-    
-    # displayManager.startx.enable = true;
 
     # windowManager.i3 = {
     #   enable = true;
@@ -115,12 +102,6 @@
   # # Enable the ly Desktop Environment.
   services.displayManager = {
     ly.enable = true;
-    # defaultSession = "sway";
-    # defaultSession = "none+i3";
-    # autoLogin = {
-    #   enable = true;
-    #   user = "goaty";
-    # };
   };
 
   programs.sway = {
@@ -142,7 +123,9 @@
     ];
   };
 
-  programs.mango.enable = true;
+  programs.mango = {
+    enable = true;
+  };
 
   # Enable screen sharing
   xdg.portal = {
@@ -168,6 +151,7 @@
     };
   };
 
+  # Mouse config service required by piper
   services.ratbagd.enable = true;
 
   # Enable Mullvad VPN
