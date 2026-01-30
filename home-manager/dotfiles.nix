@@ -30,7 +30,6 @@
     "mako"
     "rmpc"
     "wlogout"
-    "fish"
     "cava"
     "sway"
     "swayimg"

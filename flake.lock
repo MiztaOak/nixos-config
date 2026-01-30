@@ -282,7 +282,6 @@
         "nix-citizen": "nix-citizen",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
-        "st": "st",
         "swww": "swww"
       }
     },
@@ -327,18 +326,6 @@
         "repo": "scenefx",
         "type": "github"
       }
-    },
-    "st": {
-      "flake": false,
-      "locked": {
-        "path": "./st",
-        "type": "path"
-      },
-      "original": {
-        "path": "./st",
-        "type": "path"
-      },
-      "parent": []
     },
     "swww": {
       "inputs": {

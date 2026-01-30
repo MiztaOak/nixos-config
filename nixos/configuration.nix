@@ -302,7 +302,6 @@
     git
     lazygit
     stow
-    fish
     ripgrep
     ast-grep
     zip
@@ -316,8 +315,6 @@
     inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
     gruvbox-gtk-theme
     foot
-    # xrandr
-    # xclip
     helix
     wlr-randr
   ];

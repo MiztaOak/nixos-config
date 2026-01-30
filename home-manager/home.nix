@@ -44,7 +44,6 @@ in
   home.homeDirectory = "/home/goaty";
 
   home.packages = with pkgs; [
-
     hyfetch
     fastfetch
 
@@ -56,9 +55,6 @@ in
     #Productivity
     obsidian
     libreoffice
-
-    #Terminal
-    fish
 
     # archives
     zip
