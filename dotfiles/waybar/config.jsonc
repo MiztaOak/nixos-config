@@ -17,6 +17,7 @@
   ],
   "modules-right": [
     "sway/language",
+    "custom/vpn",
     "cpu",
     "memory",
     // "disk",
@@ -30,6 +31,12 @@
     "format": "⏻ ",
     "rotate": 0,
     "on-click": "wlogout"
+  },
+  "custom/vpn": {
+    "exec": "$HOME/nixos-config/scripts/vpn_module.sh",
+    "interval": 1,
+    "on-click": "$HOME/nixos-config/scripts/vpn_module.sh --toggle-connection",
+    "on-click-right": "$HOME/nixos-config/scripts/vpn_module.sh --location-menu"
   },
   "dwl/tags": {
     "num-tags": 9,

@@ -111,7 +111,6 @@
       swaysome
       mako
       waybar
-      dex
       foot
       rofi
       slurp

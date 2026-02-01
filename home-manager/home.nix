@@ -83,6 +83,7 @@ in
     cowsay
     fortune
     imagemagick
+    geoipWithDatabase
 
     # system tools
     sysstat
@@ -188,13 +189,6 @@ in
       "x-scheme-handler/about" = "vivaldi-stable.desktop";
       "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
     };
-  };
-
-  xdg.autostart = {
-    enable = true;
-    entries = [
-      "${pkgs.mullvad-vpn}/share/applications/mullvad-vpn.desktop"
-    ];
   };
 
   # This value determines the home Manager release that your
