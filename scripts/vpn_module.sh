@@ -59,9 +59,9 @@ COLOR_DISCONNECTED=#FF3300
 VPN_LOCATIONS=("se" "jp" )
 
 ## [Set optional rofi menu style]. `man rofi` for help.
-icon_connect=
-icon_fav=
-icon_country=
+icon_connect=󱘖
+icon_fav=
+icon_country=
 rofi_font="JetBrainsMono Nerd Font 15"
 rofi_theme="gruvbox-material"
 rofi_location=""

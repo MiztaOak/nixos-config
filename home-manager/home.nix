@@ -70,7 +70,6 @@ in
     fzf # A command-line fuzzy finder
     git-credential-oauth
     pavucontrol
-    tree-sitter
     bc
     nautilus
     bitwarden-desktop

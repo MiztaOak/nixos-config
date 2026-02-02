@@ -5,7 +5,6 @@
 {
   inputs,
   outputs,
-  lib,
   config,
   pkgs,
   ...
@@ -66,7 +65,7 @@
   services.xserver = {
     enable = true;
 
-    videoDrivers = ["amdgpu"];
+    videoDrivers = [ "amdgpu" ];
 
     # windowManager.i3 = {
     #   enable = true;
@@ -76,7 +75,7 @@
     #     feh
     #   ];
     # };
-     
+
     # Configure keymap in X11
     xkb = {
       layout = "us,se";
@@ -156,7 +155,8 @@
   # Enable Mullvad VPN
   services.mullvad-vpn = {
     enable = true;
-    package = pkgs.mullvad-vpn;
+    # enable gui application
+    # package = pkgs.mullvad-vpn;
   };
 
   # Add support for svg icons
@@ -212,36 +212,32 @@
     XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
   };
 
-  nix =
-    let
-      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-    in
-    {
-      settings = {
-        # Enable flakes and new 'nix' command
-        experimental-features = "nix-command flakes";
-        # Workaround for https://github.com/NixOS/nix/issues/9574
-        nix-path = config.nix.nixPath;
+  nix = {
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Workaround for https://github.com/NixOS/nix/issues/9574
+      nix-path = config.nix.nixPath;
 
-        auto-optimise-store = true;
+      auto-optimise-store = true;
 
-        # Cachix for nix-citizen
-        substituters = [ "https://nix-citizen.cachix.org" ];
-        trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
-      };
-
-      optimise = {
-        automatic = true;
-        dates = [ "0:00" ];
-      };
-
-      #Currently replaced by nh
-      # gc = {
-      #   automatic = true;
-      #   dates = "weekly";
-      #   options = "--delete-older-than 30d";
-      # };
+      # Cachix for nix-citizen
+      substituters = [ "https://nix-citizen.cachix.org" ];
+      trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
     };
+
+    optimise = {
+      automatic = true;
+      dates = [ "0:00" ];
+    };
+
+    #Currently replaced by nh
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 30d";
+    # };
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

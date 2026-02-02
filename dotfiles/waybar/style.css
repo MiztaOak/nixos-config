@@ -42,21 +42,16 @@ window#waybar.hidden {
   outline:none;
   border:none;
   background-color: @workspaces-bg;
-  /* border-bottom: 5px solid @workspaces-bg; */
-  /* margin-right: 3px; */
 }
 
 #workspaces button:hover {
   box-shadow: none;
   text-shadow: none;
-  color:@workspaces-hover; 
-  background: @workspaces-bg;
 }
 
 #workspaces button.empty {
   background-color: @workspaces-empty;
   color: @fg;
-  /* border-bottom: 5px solid @workspaces-empty; */
 }
 
 #workspaces button.visible {
@@ -66,13 +61,11 @@ window#waybar.hidden {
 #workspaces button.focused {
   color: @workspaces-active;
   background-color: @workspaces-full;
-  /* border-bottom: 5px solid @workspaces-active */
 }
 
 #workspaces button.empty.focused {
   background-color: @workspaces-full;
   color: @workspaces-active;
-  /* border-bottom: 5px solid @workspaces-active */
 }
 
 #workspaces button.urgent {
@@ -80,41 +73,30 @@ window#waybar.hidden {
 }
 
 #tags button {
-  font-size: 14px;
+  font-size: 12px;
   padding: 5px 0px;
-  color: @fg0;
   border-radius:0;
   outline:none;
   border:none;
-  background-color: @workspaces-bg;
+  background-color: @workspaces-empty;
+  color: @fg;
 }
 
 #tags button:hover {
   box-shadow: none;
   text-shadow: none;
-  color: @workspace-full; 
-  background: @waybar-bg;
+  color: @fg; 
+  background: @bg2;
 }
 
-#tags button.empty {
-  background-color: @workspaces-empty;
+#tags button.occupied {
   color: @fg;
-}
-
-#tags button.visible {
-  background-color: @workspaces-visible;
+  background-color: @bg3;
 }
 
 #tags button.focused {
   color: @workspaces-active;
   background-color: @workspaces-full;
-  /* border-bottom: 5px solid @tags-active */
-}
-
-#tags button.empty.focused {
-  background-color: @workspaces-full;
-  color: @workspaces-active;
-  /* border-bottom: 5px solid @tags-active */
 }
 
 #tags button.urgent {

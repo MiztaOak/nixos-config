@@ -4,6 +4,7 @@
     enable = true;
     extraPackages = with pkgs; [
       nil
+      nixd
     ];
     settings = {
       theme = "gruvbox_transparent";
