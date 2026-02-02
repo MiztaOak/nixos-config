@@ -95,7 +95,7 @@ preload = no
 # Enable/disable storing thumbnails in persistent storage (yes/no)
 pstore = no
 # Fill the entire tile with thumbnail (yes/no)
-fill = yes
+# fill = yes
 # Anti-aliasing mode for thumbnails (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
 # Background color of the window (RGBA)
@@ -105,9 +105,10 @@ background = #202020ff
 # Background color of the selected tile (RGBA)
 select = #404040ff
 # Border color of the selected tile (RGBA)
-border = #000000ff
+# border = #000000ff
 # Shadow color of the selected tile (RGBA)
-shadow = #000000ff
+# shadow = #000000ff
+selected_scale = 1,15
 
 ################################################################################
 # Image list configuration
