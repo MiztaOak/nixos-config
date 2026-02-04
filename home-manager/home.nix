@@ -20,7 +20,6 @@ in
     ./qutebrowser.nix
     ./foot.nix
     ./theming.nix
-    ./alacritty.nix
     ./helix.nix
     dotfiles
   ];
@@ -71,10 +70,8 @@ in
     git-credential-oauth
     pavucontrol
     bc
-    nautilus
     bitwarden-desktop
-    evince
-    gnome-calculator
+    calc
     piper
 
     # misc

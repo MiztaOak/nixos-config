@@ -58,7 +58,7 @@
             alignment: Center,
         ),
         (
-            prop: (kind: Property(Title), style: (fg: "#79740e"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Title), style: (fg: "#076678"), default: (kind: Text("Unknown"))),
             width: "50%",
         ),
     ],
@@ -75,8 +75,8 @@
                         default: (kind: Text("Unknown"), style: (fg: "#3c3836", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
-                    (kind: Property(Song(Title)), style: (fg: "#79740e", modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (fg: "#79740e", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "#076678", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "#076678", modifiers: "Bold"))
                     )
                 ],
                 right: [

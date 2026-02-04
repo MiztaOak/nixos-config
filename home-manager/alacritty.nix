@@ -10,7 +10,7 @@
     theme = "gruvbox_light";
     settings = {
       terminal = {
-        shell = "fish";
+        shell = "zsh";
       };
       env = {
         XINIT_X11_SCALE_FACTOR = "1.0";

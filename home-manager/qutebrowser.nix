@@ -31,6 +31,10 @@
         };
       };
       auto_save.session = true;
+      content = {
+        notifications.enabled = false;
+        autoplay = false;
+      };
     };
     searchEngines = {
       w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
