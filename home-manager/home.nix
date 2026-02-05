@@ -75,9 +75,6 @@ in
     piper
 
     # misc
-    tree
-    cowsay
-    fortune
     imagemagick
     geoipWithDatabase
 
@@ -93,6 +90,7 @@ in
     rmpc
     openutau
     reaper
+    ani-cli
 
     #Gaming
     stable.vesktop
