@@ -225,6 +225,8 @@ bindsym $mod+r mode "resize"
     client.focused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #076678
     client.unfocused #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
     client.focused_inactive #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
+    client.placeholder #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #d5c4a1
+    client.urgent #d5c4a1 #fbf1c7 #3c3836 #d5c4a1 #9d0006
 
     #default_border normal 3
     default_border pixel 3

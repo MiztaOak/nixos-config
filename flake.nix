@@ -33,6 +33,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    self.submodules = true;
+    st = {
+      url = "./st";
+      flake = false;
+    };
+
   };
 
   outputs =

@@ -4,10 +4,10 @@ operation=$1
 workspace=$2
 output=$(i3-msg -t get_workspaces | jq -r ".[] | select(.focused == true).output")
 
-if [[ $output == "DP-3" ]]; then
+if [[ $output == "DisplayPort-2" ]]; then
   n=1
 fi
-if [[ $output == "HDMI-1" ]]; then
+if [[ $output == "HDMI-A-0" ]]; then
   n=2
 fi
 

@@ -63,14 +63,18 @@
 
     videoDrivers = [ "amdgpu" ];
 
-    # windowManager.i3 = {
-    #   enable = true;
-    #   extraPackages = with pkgs; [
-    #     polybarFull
-    #     maim
-    #     feh
-    #   ];
-    # };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        polybarFull
+        maim
+        feh
+        (pkgs.st.overrideAttrs (_: {
+          src = inputs.st;
+          patches = [ ];
+        }))
+      ];
+    };
 
     # Configure keymap in X11
     xkb = {
