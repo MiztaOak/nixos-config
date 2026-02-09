@@ -33,10 +33,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    self.submodules = true;
     st = {
-      url = "./st";
-      flake = false;
+      url = "github:miztaoak/st";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -47,6 +46,7 @@
       nixpkgs,
       home-manager,
       mango,
+      st,
       ...
     }@inputs:
     let

@@ -100,7 +100,10 @@
 
   # # Enable the ly Desktop Environment.
   services.displayManager = {
-    ly.enable = true;
+    # ly.enable = true;
+    sddm = {
+      enable = true;
+    };
   };
 
   programs.sway = {
@@ -296,6 +299,7 @@
     foot
     helix
     wlr-randr
+    inputs.st.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.zsh.enable = true;
