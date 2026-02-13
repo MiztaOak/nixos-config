@@ -36,6 +36,9 @@ in
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "olm-3.2.16"
+      ];
     };
   };
 
@@ -93,16 +96,19 @@ in
     ani-cli
 
     #Gaming
-    stable.vesktop
+    vesktop
+    element-desktop
     bolt-launcher
     lutris
     wine
     protonup-qt
     wowup-cf
-    melonDS
+    melonds
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     xivlauncher
   ];
+
+  programs.nheko.enable = true;
 
   # basic configuration of git, please change to your own
   programs.git = {

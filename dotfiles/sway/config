@@ -24,7 +24,7 @@ set $browser qutebrowser
 output DP-3 mode 1920x1080@144Hz position 1920 0
 output HDMI-A-1 mode 1920x1080@75Hz position 0 0
 
-exec swww-daemon
+exec awww-daemon
 
 exec mako
 
@@ -75,7 +75,7 @@ exec waybar
     # Open btop
     bindsym $mod+Escape exec foot btop
 
-    bindsym $mod+Shift+w exec sh /home/goaty/nixos-config/scripts/swww.sh
+    bindsym $mod+Shift+w exec sh /home/goaty/nixos-config/scripts/awww.sh
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

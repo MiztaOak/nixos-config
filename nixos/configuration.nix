@@ -89,6 +89,8 @@
     exportConfiguration = true;
   };
 
+  services.picom.enable = true;
+
   # Remove the god awful mouse acceleration
   services.libinput = {
     enable = true;
@@ -104,6 +106,11 @@
     sddm = {
       enable = true;
     };
+    autoLogin =  {
+      enable = true;
+      user = "goaty";
+    };
+    defaultSession = "none+i3";
   };
 
   programs.sway = {
@@ -122,10 +129,6 @@
       swaylock-effects
       btop
     ];
-  };
-
-  programs.mango = {
-    enable = true;
   };
 
   # Enable screen sharing
@@ -294,7 +297,7 @@
     wl-clipboard
     gcc
     neovim
-    inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     gruvbox-gtk-theme
     foot
     helix

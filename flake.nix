@@ -22,16 +22,12 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    #swww
-    swww.url = "github:LGFae/swww";
+    #awww (way better name)
+    awww = {
+      url = "git+https://codeberg.org/LGFae/awww";
+    };
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
-
-    # Mangowc
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     st = {
       url = "github:miztaoak/st";
@@ -45,7 +41,6 @@
       self,
       nixpkgs,
       home-manager,
-      mango,
       st,
       ...
     }@inputs:
@@ -104,8 +99,6 @@
             ./nixos/nixos-desktop/desktop.nix
             ./nixos/nixos-desktop/hardware-configuration.nix
 
-            mango.nixosModules.mango
-            
             home-manager.nixosModules.home-manager
             {
               home-manager.users.goaty =

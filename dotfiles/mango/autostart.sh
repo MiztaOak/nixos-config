@@ -1,7 +1,7 @@
 #!/bin/bash
 set +e 
 
-swww-daemon &
+awww-daemon &
 
 mako &
 

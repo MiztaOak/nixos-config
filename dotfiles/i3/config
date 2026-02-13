@@ -20,6 +20,7 @@ set $ws ~/nixos-config/scripts/i3ws.sh
 
 exec_always --no-startup-id ~/nixos-config/scripts/xorg_startup.sh
 exec_always --no-startup-id ~/nixos-config/scripts/polybar.sh
+exec_always --no-startup-id picom
 exec_always --no-startup-id xset s off -dpms
 exec_always --no-startup-id feh --bg-fill ~/wallpapers/cyber-asian-girl-1080.png
 
