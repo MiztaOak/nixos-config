@@ -69,6 +69,7 @@
         polybarFull
         maim
         feh
+        xclip
         (pkgs.st.overrideAttrs (_: {
           src = inputs.st;
           patches = [ ];
