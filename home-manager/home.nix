@@ -36,9 +36,6 @@ in
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "olm-3.2.16"
-      ];
     };
   };
 
@@ -98,6 +95,7 @@ in
     #Gaming
     vesktop
     element-desktop
+    teamspeak6-client
     bolt-launcher
     lutris
     wine
@@ -107,8 +105,6 @@ in
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     xivlauncher
   ];
-
-  programs.nheko.enable = true;
 
   # basic configuration of git, please change to your own
   programs.git = {
