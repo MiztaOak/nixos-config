@@ -111,7 +111,8 @@
       enable = true;
       user = "goaty";
     };
-    defaultSession = "none+i3";
+    # defaultSession = "none+i3";
+    defaultSession = "sway";
   };
 
   programs.sway = {

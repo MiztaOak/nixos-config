@@ -2,26 +2,22 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "height": 26,
+  "height": 22,
   "spacing": 16,
   // Choose the order of the modules
   "modules-left": [
     "sway/workspaces",
-    "dwl/tags",
-    "tray"
+    "sway/window"
   ],
   "modules-center": [
     "mpd"
-    // "sway/window"
     // "cava"
   ],
   "modules-right": [
-    // "sway/language",
+    "tray",
+    "sway/language",
     "custom/vpn",
-    // "cpu",
     "memory",
-    // "disk",
-    // "network",
     "wireplumber",
     // "battery",
     "clock"

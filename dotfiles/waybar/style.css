@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  font-size: 11px;
+  font-size: 12px;
   background-color: @waybar;
   transition-property: all;
   transition-duration: .5s;
@@ -31,12 +31,11 @@ window#waybar.hidden {
   
 }
 
-#cpu{
-}
-
 #workspaces button {
-  font-size: 11px;
-  padding: 5px 0px;
+  font-size: 12px;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  min-width: 22px;
   color: @fg0;
   border-radius:0;
   outline:none;
@@ -72,37 +71,6 @@ window#waybar.hidden {
   color: @alert;
 }
 
-#tags button {
-  font-size: 11px;
-  padding: 5px 0px;
-  border-radius:0;
-  outline:none;
-  border:none;
-  background-color: @workspaces-empty;
-  color: @fg;
-}
-
-#tags button:hover {
-  box-shadow: none;
-  text-shadow: none;
-  color: @fg; 
-  background: @bg2;
-}
-
-#tags button.occupied {
-  color: @fg;
-  background-color: @bg3;
-}
-
-#tags button.focused {
-  color: @workspaces-active;
-  background-color: @workspaces-full;
-}
-
-#tags button.urgent {
-  color: @alert;
-}
-
 /* Center Modules */
 
 .modules-center{
@@ -123,6 +91,18 @@ window#waybar.hidden {
 
 #network{
   padding-right: 5px;
+}
+
+#clock, #mpd {
+  color: @blue2;
+}
+
+#language, #custom-vpn, #memory, #wireplumber{
+    padding-right: 16px;
+    padding-left: 0px;
+    margin-left: 0px;
+    border-right: 1px solid @blue2;
+    color: @blue2;
 }
 
 #wireplumber.muted {
