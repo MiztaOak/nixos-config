@@ -20,8 +20,6 @@
   };
 
   confFiles = map linkFile [
-    "rofi/gruvbox-material.rasi"
-    "rofi/wallSelect.rasi"
     "hyfetch.json"
   ];
 
@@ -38,6 +36,7 @@
     "i3"
     "polybar"
     "picom"
+    "rofi"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);

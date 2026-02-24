@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "height": 22,
-  "spacing": 16,
+  "spacing": 0,
   // Choose the order of the modules
   "modules-left": [
     "sway/workspaces",
@@ -11,14 +11,17 @@
   ],
   "modules-center": [
     "mpd"
-    // "cava"
   ],
   "modules-right": [
     "tray",
     "sway/language",
+    "custom/separator",
     "custom/vpn",
+    "custom/separator",
     "memory",
+    "custom/separator",
     "wireplumber",
+    "custom/separator",
     // "battery",
     "clock"
   ],
@@ -33,6 +36,11 @@
     "interval": 1,
     "on-click": "$HOME/nixos-config/scripts/vpn_module.sh --toggle-connection",
     "on-click-right": "$HOME/nixos-config/scripts/vpn_module.sh --location-menu"
+  },
+  "custom/separator": {
+      "format": "\\",
+      "interval": "once",
+      "tooltip": false
   },
   "dwl/tags": {
     "num-tags": 9,
@@ -68,9 +76,12 @@
     "persistent-only": false,
     "active-only": true
   },
+  "sway/window": {
+    "tooltip": false,
+  },
   "mpd": {
     "port": 6600,
-    "format": "{stateIcon}   {artist} - {title}",
+    "format": "{artist} - {title} | {elapsedTime:%M:%S}/{totalTime:%M:%S}",
     "format-stopped": "󰎈 No music is being played... 󰎈",
     "tooltip-format": "{elapsedTime} / {totalTime}",
     "on-click": "rmpc -p 6600 togglepause",

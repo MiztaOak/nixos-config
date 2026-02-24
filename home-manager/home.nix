@@ -15,7 +15,6 @@ let
 in
 {
   imports = [
-    ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
     ./theming.nix

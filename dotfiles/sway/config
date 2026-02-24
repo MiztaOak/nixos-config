@@ -12,7 +12,7 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu rofi -show drun
+set $menu pkill rofi || rofi -show drun
 
 set $browser qutebrowser
 

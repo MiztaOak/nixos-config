@@ -1,0 +1,19 @@
+configuration {
+display-combi: "󰕘 >";
+display-dmenu: "󱂬 window:";
+display-drun: "󰣖 ";
+display-filebrowser: "󰉋 filebrowser:";
+display-run: "󱓞 run:";
+display-ssh: "󰣀 ssh:";
+display-window: "󱂬 window:";
+font: "JetBrainsMono Nerd Font Mono 14";
+location: 0;
+matching: "fuzzy";
+modes: [ "drun","combi","window" ];
+show-icons: true;
+sort: true;
+terminal: "foot";
+xoffset: 0;
+yoffset: 0;
+}
+@theme "~/.config/rofi/gruvbox.rasi"

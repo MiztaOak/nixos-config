@@ -27,16 +27,12 @@ window#waybar.hidden {
 #workspaces{
 }
 
-#tags {
-  
-}
-
 #workspaces button {
   font-size: 12px;
   padding: 0px 0px;
   margin: 0px 0px;
   min-width: 22px;
-  color: @fg0;
+  color: @blue2;
   border-radius:0;
   outline:none;
   border:none;
@@ -68,7 +64,13 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-  color: @alert;
+  background-color: @alert;
+  color: @workspaces-active;
+}
+
+#window {
+  padding-left: 6px;
+  color: @blue2;
 }
 
 /* Center Modules */
@@ -85,24 +87,48 @@ window#waybar.hidden {
 
 /* Right modules */
 .modules-right{
+  /* background-color: @bg2; */
   color: @text-main;
   padding-right:10px;
+}
+
+#tray {
+  padding-right: 6px;
+  background-color: @waybar;
 }
 
 #network{
   padding-right: 5px;
 }
 
-#clock, #mpd {
+#mpd {
+  padding-left: 6px;
+  padding-right: 6px;
+  /* background-color: @bg2; */
+  /* border-right: 1px solid @blue2; */
+  /* border-left: 1px solid @blue2; */
   color: @blue2;
 }
 
+#clock {
+  color: @blue2;
+  padding-left: 6px;
+}
+
 #language, #custom-vpn, #memory, #wireplumber{
-    padding-right: 16px;
-    padding-left: 0px;
-    margin-left: 0px;
-    border-right: 1px solid @blue2;
-    color: @blue2;
+  padding-right: 6px;
+  padding-left: 6px;
+  /* border-right: 1px solid @blue2; */
+  color: @blue2;
+}
+
+#custom-separator {
+  color: @blue2;
+  font-size: 14px;
+}
+
+#language {
+  /* border-left: 1px solid @blue2; */
 }
 
 #wireplumber.muted {
