@@ -101,7 +101,6 @@
     };
   };
 
-  # # Enable the ly Desktop Environment.
   services.displayManager = {
     # ly.enable = true;
     sddm = {
@@ -136,6 +135,7 @@
   # Enable screen sharing
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome

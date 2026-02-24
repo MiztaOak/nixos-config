@@ -15,7 +15,6 @@ let
 in
 {
   imports = [
-    # ./firefox.nix
     ./rofi.nix
     ./qutebrowser.nix
     ./foot.nix
@@ -86,7 +85,7 @@ in
     vlc
     mpv
     swayimg
-    krita
+    stable.krita
     rmpc
     openutau
     reaper
