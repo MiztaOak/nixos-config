@@ -50,8 +50,7 @@ in
     nextcloud-client
 
     #Productivity
-    obsidian
-    libreoffice
+    stable.libreoffice
 
     # archives
     zip
@@ -71,6 +70,7 @@ in
     bitwarden-desktop
     calc
     piper
+    starship
 
     # misc
     imagemagick
@@ -125,6 +125,7 @@ in
     syntaxHighlighting.enable = true;
 
     initContent = ''
+      eval "$(starship init zsh)"
       hyfetch
     '';
 
@@ -138,13 +139,13 @@ in
       path = "$HOME/.zsh_history";
     };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-      ];
-      theme = "intheloop";
-    };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   plugins = [
+    #     "git"
+    #   ];
+    #   theme = "intheloop";
+    # };
   };
 
   # programs.git-credential-oauth = {

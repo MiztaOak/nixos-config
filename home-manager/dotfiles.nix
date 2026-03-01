@@ -21,6 +21,7 @@
 
   confFiles = map linkFile [
     "hyfetch.json"
+    "starship.toml"
   ];
 
   confDirs = map linkDir [
