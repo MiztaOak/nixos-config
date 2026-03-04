@@ -27,7 +27,7 @@ window#waybar.hidden {
 #workspaces{
 }
 
-#workspaces button {
+#workspaces button, #tags button {
   font-size: 12px;
   padding: 0px 0px;
   margin: 0px 0px;
@@ -39,21 +39,22 @@ window#waybar.hidden {
   background-color: @workspaces-bg;
 }
 
-#workspaces button:hover {
+#workspaces button:hover, #tags button:hover {
   box-shadow: none;
   text-shadow: none;
 }
 
-#workspaces button.empty {
+#workspaces button.empty, #tags button.empty {
   background-color: @workspaces-empty;
   color: @fg;
 }
 
-#workspaces button.visible {
-  background-color: @workspaces-visible;
+#workspaces button.visible, #tags button.occupied {
+  color: @blue2;
+  background-color: @bg3;
 }
 
-#workspaces button.focused {
+#workspaces button.focused, #tags button.focused {
   color: @workspaces-active;
   background-color: @workspaces-full;
 }
@@ -63,7 +64,7 @@ window#waybar.hidden {
   color: @workspaces-active;
 }
 
-#workspaces button.urgent {
+#workspaces button.urgent, #tags button.urgent {
   background-color: @alert;
   color: @workspaces-active;
 }

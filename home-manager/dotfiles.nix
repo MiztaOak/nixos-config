@@ -38,6 +38,7 @@
     "polybar"
     "picom"
     "rofi"
+    "mango"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);

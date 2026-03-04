@@ -26,6 +26,10 @@
     };
   };
 
+  imports = [
+    ./mango.nix
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -112,7 +116,7 @@
       user = "goaty";
     };
     # defaultSession = "none+i3";
-    defaultSession = "sway";
+    defaultSession = "mango";
   };
 
   programs.sway = {

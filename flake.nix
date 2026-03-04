@@ -13,15 +13,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # #Nixvim
-    # nixvim = {
-    #   # For unstable
-    #   url = "github:nix-community/nixvim";
-    #   # url = "github:nix-community/nixvim/nixos-25.11";
-
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     #awww (way better name)
     awww = {
       url = "git+https://codeberg.org/LGFae/awww";
@@ -34,6 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -98,6 +93,8 @@
             #Desktop specific config
             ./nixos/nixos-desktop/desktop.nix
             ./nixos/nixos-desktop/hardware-configuration.nix
+
+            inputs.mango.nixosModules.mango
 
             home-manager.nixosModules.home-manager
             {
