@@ -2,8 +2,8 @@
   # nix32Hash = nix-prefetch-url ${url}
   # hash = nix hash convert --hash-algo sha256 --from nix32 ${nix32Hash}
   gruvboxLightTheme = pkgs.fetchurl {
-    url = "https://codeberg.org/dnkl/foot/raw/commit/135d4478a156ce2264afd0ee5203510132986381/themes/gruvbox-light";
-    hash = "sha256-hU0BfTOQgleufVI+lCOU+o9c/jOYgm8nhF23IJUPzDI=";
+    url = "https://codeberg.org/dnkl/foot/raw/commit/4fd682b4e8d985ce25d2bd599c1d855bc1489650/themes/gruvbox-light";
+    hash = "sha256-XZbeR9JEF2DRsApettTM3gnmlOWp+369ROdnTECm2eQ=";
   };
 in {
   programs.foot = {
@@ -17,8 +17,8 @@ in {
         dpi-aware = "yes";
         pad = "5x5 center-when-maximized-and-fullscreen";
       };
-      colors = {
-        alpha = 0.95;
+      colors-light = {
+        alpha = 0.9;
       };
     };
   };
