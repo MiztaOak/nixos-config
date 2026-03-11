@@ -63,12 +63,12 @@
 
   # Enable the X11 windowing system.
   services.xserver = {
-    enable = true;
+    enable = false;
 
     videoDrivers = [ "amdgpu" ];
 
     windowManager.i3 = {
-      enable = true;
+      enable = false;
       extraPackages = with pkgs; [
         polybarFull
         maim
@@ -94,7 +94,7 @@
     exportConfiguration = true;
   };
 
-  services.picom.enable = true;
+  services.picom.enable = false;
 
   # Remove the god awful mouse acceleration
   services.libinput = {
@@ -120,7 +120,7 @@
   };
 
   programs.sway = {
-    enable = true;
+    enable = false;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       swaysome
