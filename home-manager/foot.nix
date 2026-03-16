@@ -11,7 +11,7 @@ in {
     settings = {
       main = {
         include = "${gruvboxLightTheme}";
-        term = "xterm-256color";
+        term = "foot";
         shell="zsh";
         font = "JetBrainsMono Nerd Font Mono:size=12";
         dpi-aware = "yes";
