@@ -30,13 +30,9 @@
     "rmpc"
     "wlogout"
     "cava"
-    "sway"
     "swayimg"
     "swaylock"
     "waybar"
-    "i3"
-    "polybar"
-    "picom"
     "rofi"
     "mango"
   ];
