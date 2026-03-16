@@ -67,7 +67,7 @@ in
     git-credential-oauth
     pavucontrol
     bc
-    bitwarden-desktop
+    stable.bitwarden-desktop
     calc
     piper
     starship

@@ -309,7 +309,6 @@
     foot
     helix
     wlr-randr
-    inputs.st.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.zsh.enable = true;
