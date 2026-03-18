@@ -61,41 +61,6 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = false;
-
-    videoDrivers = [ "amdgpu" ];
-
-    windowManager.i3 = {
-      enable = false;
-      extraPackages = with pkgs; [
-        polybarFull
-        maim
-        feh
-        xclip
-        (pkgs.st.overrideAttrs (_: {
-          src = inputs.st;
-          patches = [ ];
-        }))
-      ];
-    };
-
-    # Configure keymap in X11
-    xkb = {
-      layout = "us,se";
-      options = "grp:win_space_toggle";
-    };
-
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-
-    enableCtrlAltBackspace = true;
-    exportConfiguration = true;
-  };
-
-  services.picom.enable = false;
-
   # Remove the god awful mouse acceleration
   services.libinput = {
     enable = true;
@@ -115,7 +80,6 @@
       enable = true;
       user = "goaty";
     };
-    # defaultSession = "none+i3";
     defaultSession = "mango";
   };
 
