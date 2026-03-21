@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   inputs,
   outputs,
@@ -16,9 +12,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.stable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
     ];
 
     config = {
@@ -71,7 +64,6 @@
   };
 
   services.displayManager = {
-    # ly.enable = true;
     sddm = {
       enable = true;
       wayland.enable = true;
@@ -132,8 +124,6 @@
   # Enable Mullvad VPN
   services.mullvad-vpn = {
     enable = true;
-    # enable gui application
-    # package = pkgs.mullvad-vpn;
   };
 
   # Add support for svg icons
@@ -216,9 +206,6 @@
     # };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.goaty = {
     isNormalUser = true;
@@ -250,8 +237,6 @@
   programs.obs-studio.enable = true;
   programs.obs-studio.enableVirtualCamera = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     fastfetch
     fzf

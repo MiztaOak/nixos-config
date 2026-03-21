@@ -4,10 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example:
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # Also see the 'stable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -63,27 +60,6 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        nixos-laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            # > Our main nixos configuration file <
-            ./nixos/configuration.nix
-            # Laptop specific config
-            ./nixos/nixos-laptop/laptop.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.users.goaty =
-                { ... }:
-                {
-                  imports = [
-                    ./home-manager/home.nix
-                  ];
-                };
-              home-manager.extraSpecialArgs = { inherit inputs outputs; };
-            }
-          ];
-        };
         nixos-desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [

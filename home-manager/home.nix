@@ -132,6 +132,7 @@ in
     shellAliases = {
       switch = "nh os switch ~/nixos-config";
       update = "nh os switch ~/nixos-config --update";
+      la = "ls -la";
     };
 
     history = {
@@ -139,18 +140,7 @@ in
       path = "$HOME/.zsh_history";
     };
 
-    # oh-my-zsh = {
-    #   enable = true;
-    #   plugins = [
-    #     "git"
-    #   ];
-    #   theme = "intheloop";
-    # };
   };
-
-  # programs.git-credential-oauth = {
-  #   enable = true;
-  # };
 
   programs.home-manager.enable = true;
 
