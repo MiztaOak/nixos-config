@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     yazi
@@ -33,6 +33,7 @@
       name = "Gruvbox-Light";
       package = pkgs.gruvbox-gtk-theme;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   dconf = {
