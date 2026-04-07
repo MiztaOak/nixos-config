@@ -89,6 +89,7 @@ in
     openutau
     reaper
     ani-cli
+    darktable
 
     #Gaming
     vesktop
