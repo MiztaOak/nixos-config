@@ -6,24 +6,19 @@
   "spacing": 0,
   // Choose the order of the modules
   "modules-left": [
-    // "sway/workspaces",
     "dwl/tags"
-    // "sway/window"
   ],
   "modules-center": [
-    "mpd"
+    "dwl/window"
   ],
   "modules-right": [
     "tray",
-    // "sway/language",
-    // "custom/separator",
     "custom/vpn",
     "custom/separator",
     "memory",
     "custom/separator",
     "wireplumber",
     "custom/separator",
-    // "battery",
     "clock"
   ],
   // Modules
