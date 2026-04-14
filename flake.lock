@@ -7,11 +7,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1774191766,
-        "narHash": "sha256-bvO+gfuUOVUiBEwAJ5A2RjpysPzCfyXD+DM8piOa1+4=",
+        "lastModified": 1775929179,
+        "narHash": "sha256-rhQyE0CzqFkHWxhhxzapLGnRWKx6NAZo7KSrw6jUXwQ=",
         "ref": "refs/heads/main",
-        "rev": "7a8fc2e646b97e5ae508a44d3449e3b41345d456",
-        "revCount": 1336,
+        "rev": "efc4c492a30d7e098541ad0ca95c22287cbc26ba",
+        "revCount": 1341,
         "type": "git",
         "url": "https://codeberg.org/LGFae/awww"
       },
@@ -179,11 +179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775900011,
-        "narHash": "sha256-QUGu6CJYFQ5AWVV0n3/FsJyV+1/gj7HSDx68/SX9pwM=",
+        "lastModified": 1776015217,
+        "narHash": "sha256-PUb9TTfqsA1g+aHJt5s8tIP7QdX8xHeOtDMPVRuylfM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b0569dc6ec1e6e7fefd8f6897184e4c191cd768e",
+        "rev": "f6196e5b4d3f0168d09feab9ba678fa18ca58cbb",
         "type": "github"
       },
       "original": {
