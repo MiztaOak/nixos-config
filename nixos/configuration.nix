@@ -21,6 +21,7 @@
 
   imports = [
     ./mango.nix
+    ./zen-browser.nix
   ];
 
   # Bootloader.
