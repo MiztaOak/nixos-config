@@ -96,7 +96,7 @@ in
     element-desktop
     teamspeak6-client
     bolt-launcher
-    lutris
+    stable.lutris
     wine
     protonup-qt
     wowup-cf
