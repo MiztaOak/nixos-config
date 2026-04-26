@@ -26,7 +26,9 @@ let
     "browser.urlbar.suggest.topsites" = false;
     "browser.urlbar.suggest.history" = false;
     "browser.startup.couldRestoreSession.count" = 1;
-    # "browser.startup.homepage" = "about:home";
+    # Fix the broken tab discard
+    "browser.low_commit_space_threshold_percent" = 100;
+    "browser.tabs.unloadOnLowMemory" = true;
     #Kill all ai features
     "browser.ml.enable" = false;
     "browser.ml.chat.enabled" = false;
@@ -39,7 +41,6 @@ let
     "browser.tabs.groups.smart.userEnabled" = false;
     "pdfjs.enableAltTextModelDownload" = false;
     "pdfjs.enableGuessAltText" = false;
-    # ...
   };
 
   extensions = [
