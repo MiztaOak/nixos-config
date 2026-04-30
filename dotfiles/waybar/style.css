@@ -2,10 +2,11 @@
 * {
   font-family: Jetbrains Mono Nerd Font, sans-serif;
   min-height: 0;
+  font-weight: bold;
 }
 
 window#waybar {
-  font-size: 12px;
+  font-size: 13px;
   background-color: @waybar;
   transition-property: all;
   transition-duration: .5s;
@@ -125,7 +126,7 @@ window#waybar.hidden {
 
 #custom-separator {
   color: @blue2;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #language {

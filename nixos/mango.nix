@@ -10,8 +10,6 @@
     slurp
     grim
     wl-clipboard
-    wlogout
-    swaylock-effects
     btop
   ];
 }

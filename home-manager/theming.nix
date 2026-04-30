@@ -3,11 +3,9 @@
   home.packages = with pkgs; [
     yazi
     cava
-    wlogout
     wl-clipboard
     mako
     waybar
-    swaylock-effects
 
     grim
     slurp
