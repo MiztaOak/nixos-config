@@ -134,6 +134,8 @@ in
       switch = "nh os switch ~/nixos-config";
       update = "nh os switch ~/nixos-config --update";
       la = "ls -la";
+      gs = "git status";
+      lz = "lazygit";
     };
 
     history = {
