@@ -19,6 +19,7 @@ in
     ./foot.nix
     ./theming.nix
     ./helix.nix
+    ./emacs.nix
     dotfiles
   ];
 
@@ -42,7 +43,6 @@ in
 
   home.packages = with pkgs; [
     hyfetch
-    fastfetch
 
     vivaldi
 
