@@ -6,7 +6,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs.emacs-gtk;
     extraPackages = epkgs: [
       epkgs.nix-mode
       epkgs.nixfmt
@@ -25,12 +25,17 @@
       (require 'evil)
       (evil-mode 1)
 
+      ;; Disable bell and 'screen shake'
       (setq visible-bell 1)
+      (setq ring-bell-function 'ignore)
 
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
 
       (global-hl-line-mode +1)
+
+      (set-frame-parameter nil 'alpha-background 90)
+      (add-to-list 'default-frame-alist '(alpha-background . 90))
 
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
