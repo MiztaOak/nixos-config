@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     nixfmt
+    agda
   ];
 
   programs.emacs = {
@@ -12,6 +13,7 @@
       epkgs.nixfmt
       epkgs.evil
       epkgs.gruvbox-theme
+      epkgs.agda2-mode
     ];
     extraConfig = ''
       (setq inhibit-startup-screen t)
