@@ -29,6 +29,7 @@ let
     # Fix the broken tab discard
     "browser.low_commit_space_threshold_percent" = 100;
     "browser.tabs.unloadOnLowMemory" = true;
+    "browser.tabs.min_inactive_duration_before_unload" = 1800000;
     #Kill all ai features
     "browser.ml.enable" = false;
     "browser.ml.chat.enabled" = false;
