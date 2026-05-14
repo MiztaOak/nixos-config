@@ -8,18 +8,23 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
-    extraPackages = epkgs: [
-      epkgs.nix-mode
-      epkgs.nixfmt
-      epkgs.evil
-      epkgs.gruvbox-theme
-      epkgs.agda2-mode
-    ];
+    extraPackages = epkgs: with epkgs; ([
+      nix-mode
+      nixfmt
+      evil
+      gruvbox-theme
+      agda2-mode
+      tree-sitter-langs
+      treesit-grammars.with-all-grammars
+      diff-hl
+    ]);
     extraConfig = ''
       (setq inhibit-startup-screen t)
       (setq inhibit-startup-message t)
       (setq standard-indent 2)
       (set-fontset-font "fontset-default" 'unicode "JetBrainMono Nerd Font")
+      (add-to-list 'default-frame-alist
+                   '(font . "JetBrainsMono Nerd Font-10"))
 
       ;; Enable Evil
       (setq evil-shift-width 2)
@@ -43,6 +48,14 @@
 
       ;; Only display line numbers for programing language files
       (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+      ;; Tree sitter conf
+      ;(global-tree-sitter-mode)
+      (add-hook 'prog-mode-hook 'tree-sitter-mode)
+      (add-hook 'prog-mode-hook 'tree-sitter-hl-mode)
+
+      ;; Diff-hl
+      (global-diff-hl-mode)
 
       (load-theme 'gruvbox-light-medium)
     '';

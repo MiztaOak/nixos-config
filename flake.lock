@@ -179,11 +179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778609305,
-        "narHash": "sha256-muTc+WME6k3sfTr/Pvmw8hrK7zXrbl961TEF9wPeAnk=",
+        "lastModified": 1778628724,
+        "narHash": "sha256-VNG6hJ146VEenXcDrB3t6MVnrMx+gtyCWTCDkzOp9Qs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5878fdadfe2cfe1b3383b38d66117f7b80696b68",
+        "rev": "6a0bbd6b4720da1c9ce7ebf35ff5c41a82db367a",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1778599285,
-        "narHash": "sha256-Uabc+V169/gRiLMaKdaOlOSFf3gmjCC2/HQ8vZz4qbU=",
+        "lastModified": 1778677612,
+        "narHash": "sha256-s9wbnY8X6b2yBl0SlsCNR4gCofJv0yMkkyVVPOLvB0Y=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "34e9246e4ae2be36d79fdd46d3c521e31ecbde85",
+        "rev": "e670b890bdd252459b33115cf6ba8c8007348638",
         "type": "github"
       },
       "original": {
@@ -225,11 +225,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1778575483,
-        "narHash": "sha256-o8ti9MTqaeAcOSx3RWgYvIL970siqefnuBF2Fggph1M=",
+        "lastModified": 1778661129,
+        "narHash": "sha256-E9upXDHHOWUe012S0xvWHrehY1EU17YE1+DRkJH+LJ0=",
         "owner": "LovingMelody",
         "repo": "nix-citizen",
-        "rev": "e51f1da13b61e6ea0985dddb32b745a740ff7cc2",
+        "rev": "301dd045f178ecaf202872f9732e2fff857728b9",
         "type": "github"
       },
       "original": {
