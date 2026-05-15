@@ -22,6 +22,7 @@
   imports = [
     ./mango.nix
     ./zen-browser.nix
+    ./xorg.nix
   ];
 
   # Bootloader.
@@ -65,15 +66,18 @@
   };
 
   services.displayManager = {
-    sddm = {
+    ly = {
       enable = true;
-      wayland.enable = true;
     };
-    autoLogin =  {
-      enable = true;
-      user = "goaty";
-    };
-    defaultSession = "mango";
+    # sddm = {
+    #   enable = true;
+    #   wayland.enable = false;
+    # };
+    # autoLogin =  {
+    #   enable = true;
+    #   user = "goaty";
+    # };
+    # defaultSession = "mango";
   };
 
   programs.sway = {

@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, inputs, ...}:
 {
   services.xserver = {
     enable = true;
@@ -6,7 +6,7 @@
     videoDrivers = [ "amdgpu" ];
 
     windowManager.i3 = {
-      enable = false;
+      enable = true;
       extraPackages = with pkgs; [
         polybarFull
         maim

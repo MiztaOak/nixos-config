@@ -14,7 +14,7 @@ set $term st -e zsh
 # Your preferred application launcher
 set $menu rofi -show drun
 
-set $browser qutebrowser
+set $browser zen
 
 set $ws ~/nixos-config/scripts/i3ws.sh
 
@@ -84,6 +84,10 @@ workspace 2:1 output HDMI-A-0
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    bindsym $mod+comma focus output left
+    bindsym $mod+period focus output right
+
 #
 # Workspaces:
 #
@@ -227,7 +231,7 @@ bindsym $mod+r mode "resize"
 #         inactive_workspace #bdae93 #bdae93 #282828
 #     }
 #
-#     tray_output primary 
+#     tray_output primary
 #     tray_padding 3
 #
 #     # top right bottom left padding

@@ -17,10 +17,10 @@
 
     nix-citizen.url = "github:LovingMelody/nix-citizen";
 
-    # st = {
-    #   url = "github:miztaoak/st";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    st = {
+      url = "github:miztaoak/st";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     mango = {
       url = "github:mangowm/mango";
@@ -38,6 +38,7 @@
       self,
       nixpkgs,
       home-manager,
+      st,
       ...
     }@inputs:
     let

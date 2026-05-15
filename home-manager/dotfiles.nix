@@ -33,6 +33,9 @@
     "waybar"
     "rofi"
     "mango"
+    "polybar"
+    "picom"
+    "i3"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);
