@@ -36,6 +36,7 @@
     "polybar"
     "picom"
     "i3"
+    "tmux"
   ];
 
   links = mergeAttrsList (confFiles ++ confDirs);

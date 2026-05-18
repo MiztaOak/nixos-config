@@ -8,16 +8,17 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
-    extraPackages = epkgs: with epkgs; ([
-      nix-mode
-      nixfmt
-      evil
-      gruvbox-theme
-      agda2-mode
-      tree-sitter-langs
-      treesit-grammars.with-all-grammars
-      diff-hl
-    ]);
+    extraPackages =
+      epkgs: with epkgs; ([
+        nix-mode
+        nixfmt
+        evil
+        gruvbox-theme
+        agda2-mode
+        tree-sitter-langs
+        treesit-grammars.with-all-grammars
+        diff-hl
+      ]);
     extraConfig = ''
       (setq inhibit-startup-screen t)
       (setq inhibit-startup-message t)
@@ -51,7 +52,10 @@
 
       ;; Tree sitter conf
       ;(global-tree-sitter-mode)
-      (add-hook 'prog-mode-hook 'tree-sitter-mode)
+      (use-package tree-sitter-langs
+        :after tree-sitter
+        :custom (global-tree-sitter-mode t))
+      ;(add-hook 'prog-mode-hook 'tree-sitter-mode)
       (add-hook 'prog-mode-hook 'tree-sitter-hl-mode)
 
       ;; Diff-hl

@@ -103,6 +103,7 @@ in
     melonds
     inputs.nix-citizen.packages.${stdenv.hostPlatform.system}.rsi-launcher
     xivlauncher
+    tmux
   ];
 
   # basic configuration of git, please change to your own

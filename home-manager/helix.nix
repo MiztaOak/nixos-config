@@ -5,6 +5,7 @@
     extraPackages = with pkgs; [
       nil
       nixd
+      clang-tools
     ];
     settings = {
       theme = "gruvbox_transparent";
@@ -13,6 +14,8 @@
         line-number = "relative";
         cursorline = true;
         auto-format = false;
+        trim-trailing-whitespace = true;
+        end-of-line-diagnostics = "hint";
       };
       editor.indent-guides = {
         character = "|";
@@ -30,6 +33,9 @@
           "version-control"
           "file-name"
         ];
+      };
+      editor.inline-diagnostics = {
+        cursor-line = "warning";
       };
       editor.file-picker = {
         hidden = false;
