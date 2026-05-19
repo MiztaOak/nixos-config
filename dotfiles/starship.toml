@@ -39,7 +39,7 @@ color_bg3 = '#bdae93'
 color_fg0 = '#282828'
 color_blue = '#458588'
 color_aqua = '#689d6a'
-color_green = '#98971a'
+color_green = '#79740e'
 color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
@@ -179,12 +179,12 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[ \$](bold fg:color_green)'
-error_symbol = '[ \$](bold fg:color_red)'
-vimcmd_symbol = '[ #](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[ #](bold fg:color_purple)'
-vimcmd_replace_symbol = '[ #](bold fg:color_purple)'
-vimcmd_visual_symbol = '[ #](bold fg:color_yellow)'
+success_symbol = '[ #](bold fg:color_green)'
+error_symbol = '[ #](bold fg:color_red)'
+vimcmd_symbol = '[ \$](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[ \$](bold fg:color_purple)'
+vimcmd_replace_symbol = '[ \$](bold fg:color_purple)'
+vimcmd_visual_symbol = '[ \$](bold fg:color_yellow)'
 # These cause some issues with st look at later
 # success_symbol = '[ ](bold fg:color_green)'
 # error_symbol = '[ ](bold fg:color_red)'

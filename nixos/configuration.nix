@@ -263,6 +263,7 @@
     foot
     helix
     wlr-randr
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.zsh.enable = true;

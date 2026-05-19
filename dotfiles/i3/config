@@ -211,29 +211,29 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-#
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#     status_command i3status
-#     strip_workspace_numbers yes
-#     # workspace_command sh ~/nixos-config/scripts/i3ws_name.sh
-#
-#     font pango: JetBrainsMono Nerd Font Mono,Font Awesome 11
-#
-#     colors {
-#         statusline #282828
-#         background #ebdbb2
-#         focused_workspace #076678 #076678 #ebdbb2
-#         active_workspace #076678 #076678 #ebdbb2
-#         inactive_workspace #bdae93 #bdae93 #282828
-#     }
-#
-#     tray_output primary
-#     tray_padding 3
-#
-#     # top right bottom left padding
-#     padding 0 5 0 2
-# }
+ # bar {
+ #     position top
+
+ #     # When the status_command prints a new line to stdout, swaybar updates.
+ #     # The default just shows the current date and time.
+ #     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+ #     status_command i3status
+ #     strip_workspace_numbers yes
+ #     workspace_command sh ~/nixos-config/scripts/i3ws_name.sh
+
+ #     font pango: JetBrainsMono Nerd Font Mono,Font Awesome 11
+
+ #     colors {
+ #         statusline #282828
+ #         background #ebdbb2
+ #         focused_workspace #076678 #076678 #ebdbb2
+ #         active_workspace #076678 #076678 #ebdbb2
+ #         inactive_workspace #bdae93 #bdae93 #282828
+ #     }
+
+ #     tray_output primary
+ #     tray_padding 3
+
+ #     # top right bottom left padding
+ #     padding 0 5 0 2
+ # }
