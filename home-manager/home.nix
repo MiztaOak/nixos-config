@@ -20,6 +20,7 @@ in
     ./theming.nix
     ./helix.nix
     ./emacs.nix
+    ./nixvim.nix
     dotfiles
   ];
 
@@ -138,6 +139,7 @@ in
       la = "ls -la";
       gs = "git status";
       lz = "lazygit";
+      em = "emacs & disown";
     };
 
     history = {

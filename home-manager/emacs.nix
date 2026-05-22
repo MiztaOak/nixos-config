@@ -1,8 +1,11 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: let
+  _agda = with pkgs; agda.withPackages [
+    agdaPackages.standard-library
+  ];
+in {
   home.packages = with pkgs; [
     nixfmt
-    agda
+    _agda
   ];
 
   programs.emacs = {

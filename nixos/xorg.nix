@@ -16,6 +16,7 @@
           src = inputs.st;
           patches = [ ];
         }))
+        ueberzugpp # Need for yazi to be able to display images
       ];
     };
 
