@@ -21,7 +21,6 @@
 
   imports = [
     ./mango.nix
-    ./zen-browser.nix
     ./xorg.nix
   ];
 
@@ -218,6 +217,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "libvirtd"
     ];
   };
 
@@ -264,6 +264,7 @@
     helix
     wlr-randr
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+    dnsmasq
   ];
 
   programs.zsh.enable = true;
@@ -271,6 +272,10 @@
   users.extraUsers.goaty = {
     shell = pkgs.zsh;
   };
+
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   programs.dconf.enable = true;
 
@@ -301,6 +306,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  # networking.firewall.trustedInterfaces = [ "virbr0" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

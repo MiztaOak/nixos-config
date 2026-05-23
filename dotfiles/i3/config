@@ -1,5 +1,3 @@
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -10,17 +8,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term st -e zsh
+set $term st 
 # Your preferred application launcher
 set $menu rofi -show drun
-
-set $browser zen
 
 set $ws ~/nixos-config/scripts/i3ws.sh
 
 exec_always --no-startup-id ~/nixos-config/scripts/xorg_startup.sh
 exec_always --no-startup-id ~/nixos-config/scripts/polybar.sh
-exec_always --no-startup-id picom
 exec_always --no-startup-id xset s off -dpms
 exec_always --no-startup-id ~/.fehbg
 
@@ -50,6 +45,10 @@ workspace 2:1 output HDMI-A-0
 
     # Wallpaper picker
     bindsym $mod+Shift+w exec "sh ~/nixos-config/scripts/feh_wall.sh"
+
+    # Mullvad vpn management
+    bindsym $mod+Shift+m exec "sh ~/nixos-config/scripts/vpn_module_xorg.sh --toggle-connection"
+    bindsym $mod+Shift+Ctrl+m exec "sh ~/nixos-config/scripts/vpn_module_xorg.sh --location-menu"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -136,11 +135,11 @@ workspace 2:1 output HDMI-A-0
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+m floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+m focus mode_toggle
+    # # Toggle the current focus between tiling and floating mode
+    # bindsym $mod+Shift+m floating toggle
+    #
+    # # Swap focus between the tiling area and the floating area
+    # bindsym $mod+m focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent

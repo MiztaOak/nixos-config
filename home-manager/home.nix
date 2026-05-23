@@ -140,6 +140,7 @@ in
       gs = "git status";
       lz = "lazygit";
       em = "emacs & disown";
+      nixClean = "nh clean all --keep-since 7d --keep 10 --ask --optimise";
     };
 
     history = {

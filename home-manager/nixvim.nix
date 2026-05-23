@@ -22,7 +22,11 @@
     vimAlias = true;
 
     nixpkgs.useGlobalPackages = true;
-    dependencies.nodejs.enable = true;
+    dependencies = {
+      nodejs.enable = true;
+      tree-sitter.enable = true;
+      fish.enable = true;
+    };
 
     clipboard.register = "unnamedplus";
     clipboard.providers.wl-copy.enable = true;
@@ -78,6 +82,15 @@
       telescope = {
         enable = true;
 
+        extensions = {
+          file-browser = {
+            enable = true;
+            settings = {
+              hijack_netrw = true;
+            };
+          };
+        };
+
         highlightTheme = "gruvbox";
 
         keymaps = {
@@ -87,6 +100,7 @@
           "<leader>b" = "buffers";
           "<leader>fh" = "help_tags";
           "<leader>fd" = "diagnostics";
+          "<leader>fb" = "file_browser";
         };
 
         settings.defaults = {
