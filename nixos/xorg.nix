@@ -34,4 +34,21 @@
   };
 
   services.picom.enable = true;
+
+  services.dunst = {
+    enable = true;
+    settings = {
+      global = {
+        width = "(200,300)";
+        height = "(0,150)";
+        offset = "(30,50)";
+        origin=  "top-right";
+        transparency = "10";
+        background = "#fbf1c7";
+        foreground = "#3c3836";
+        frame_color = "#076678";
+        font = "JetBrainsMono Nerd Font 10";
+      };
+    };
+  };
 }
