@@ -10,11 +10,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    #awww (way better name)
-    awww = {
-      url = "git+https://codeberg.org/LGFae/awww";
-    };
-
     nix-citizen.url = "github:LovingMelody/nix-citizen";
 
     st = {

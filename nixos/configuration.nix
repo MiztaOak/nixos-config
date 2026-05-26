@@ -258,7 +258,7 @@
     wl-clipboard
     gcc
     neovim
-    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+    awww
     gruvbox-gtk-theme
     foot
     helix
